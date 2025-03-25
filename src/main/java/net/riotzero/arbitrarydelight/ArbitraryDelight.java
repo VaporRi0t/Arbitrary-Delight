@@ -1,5 +1,7 @@
 package net.riotzero.arbitrarydelight;
 
+import net.riotzero.arbitrarydelight.registry.CreativeTabRegistry;
+import net.riotzero.arbitrarydelight.registry.ItemRegistry;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -38,6 +40,8 @@ public class ArbitraryDelight {
         modEventBus.addListener(this::addCreative);
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+        ItemRegistry.ITEMS.register(modEventBus);
+        CreativeTabRegistry.CREATIVE_MODE_TABS.register(modEventBus);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {

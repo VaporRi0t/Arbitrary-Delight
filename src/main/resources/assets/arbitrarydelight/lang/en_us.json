@@ -1,5 +1,15 @@
 {
-  "itemGroup.examplemod": "Example Mod Tab",
-  "block.examplemod.example_block": "Example Block",
-  "item.examplemod.example_item": "Example Item"
+  "item.arbitrarydelight.amethyst_knife": "Amethyst Knife",
+  "item.arbitrarydelight.pasta": "Pasta",
+  "item.arbitrarydelight.eggs_and_potatoes": "Eggs and Potatoes",
+  "item.arbitrarydelight.chicken_noodle_soup": "Chicken Noodle Soup",
+  "item.arbitrarydelight.potato_fries": "Potato Fries",
+  "item.arbitrarydelight.baked_potato_fries": "Baked Potato Fries",
+  "item.arbitrarydelight.chicken_nuggets": "Chicken Nuggets",
+  "item.arbitrarydelight.cooked_chicken_nuggets": "Cooked Chicken Nuggets",
+  "item.arbitrarydelight.nuggets_and_fries": "Nuggets and Fries",
+  "item.arbitrarydelight.berry_milk": "Sweet Berry Milk",
+  "item.arbitrarydelight.sweet_berry_custard": "Sweet Berry Custard",
+
+  "itemGroup.arbitrarydelight": "Arbitrary Delight"
 }
