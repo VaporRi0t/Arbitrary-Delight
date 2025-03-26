@@ -1,25 +1,13 @@
+![arbitrary delight logo](https://cdn.modrinth.com/data/cached_images/f5fda28c9190dbdd8207b1de620e5bec6a263af9.png)
+Arbitrary Delight will add on to Farmer's Delight by adding more meals and drinks to cook, and craft.
 
-Installation information
-=======
+This mod adds more meals to cook/craft using ingredients from Farmer's Delight and some more ingredients added in this mod. This mod was designed to closely fit in to Farmer's Delight and Vanilla Minecraft so nothing stands out to much. 
 
-This template repository can be directly cloned to get you started with a new
-mod. Simply create a new repository cloned from this one, by following the
-instructions provided by [GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
+Arbitrary Delight requires Farmer's Delight, you can also use JEI for recipes.
 
-Once you have your clone, simply open the repository in the IDE of your choice. The usual recommendation for an IDE is either IntelliJ IDEA or Eclipse.
+## About
+Heres a list of new additions added (FOR NOW), remember this mod is in beta and more additions will be added soon :)
 
-If at any point you are missing libraries in your IDE, or you've run into problems you can
-run `gradlew --refresh-dependencies` to refresh the local cache. `gradlew clean` to reset everything 
-{this does not affect your code} and then start the process again.
+![arbitrary delight list](https://cdn.modrinth.com/data/cached_images/ab21dd8340da5c11c56e9e451794e01ccbd10795.png)
 
-Mapping Names:
-============
-By default, the MDK is configured to use the official mapping names from Mojang for methods and fields 
-in the Minecraft codebase. These names are covered by a specific license. All modders should be aware of this
-license. For the latest license text, refer to the mapping file itself, or the reference copy here:
-https://github.com/NeoForged/NeoForm/blob/main/Mojang.md
-
-Additional Resources: 
-==========
-Community Documentation: https://docs.neoforged.net/  
-NeoForged Discord: https://discord.neoforged.net/
+Most meals/drinks are made in the cooking pot but some can be crafted!
