@@ -10,6 +10,17 @@
   "item.arbitrarydelight.nuggets_and_fries": "Nuggets and Fries",
   "item.arbitrarydelight.berry_milk": "Sweet Berry Milk",
   "item.arbitrarydelight.sweet_berry_custard": "Sweet Berry Custard",
+  "item.arbitrarydelight.pepperoni_pizza": "Pepperoni Pizza",
+  "item.arbitrarydelight.pepperoni_pizza_slice": "Slice of Pepperoni Pizza",
+  "item.arbitrarydelight.cheese_pizza": "Cheese Pizza",
+  "item.arbitrarydelight.cheese_pizza_slice": "Slice of Cheese Pizza",
+  "item.arbitrarydelight.cheese_block": "Cheese Block",
+  "item.arbitrarydelight.pepperonis": "Pepperonis",
+  "item.arbitrarydelight.pizza_crust": "Pizza Crust",
+  "item.arbitrarydelight.shredded_cheese": "Shredded Cheese",
+
+  "block.arbitrarydelight.pepperoni_pizza": "Pepperoni Pizza",
+  "block.arbitrarydelight.cheese_pizza": "Cheese Pizza",
 
   "itemGroup.arbitrarydelight": "Arbitrary Delight"
 }

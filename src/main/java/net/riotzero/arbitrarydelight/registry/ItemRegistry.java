@@ -3,6 +3,7 @@ package net.riotzero.arbitrarydelight.registry;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -10,6 +11,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import net.riotzero.arbitrarydelight.ArbitraryDelight;
 import net.riotzero.arbitrarydelight.util.FoodValues.FoodValuesExtra;
 
+import vectorwing.farmersdelight.common.FoodValues;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
 import vectorwing.farmersdelight.common.item.DrinkableItem;
 import vectorwing.farmersdelight.common.item.KnifeItem;
@@ -85,4 +87,23 @@ public class ItemRegistry {
             () -> new ConsumableItem(foodItem(FoodValuesExtra.SWEET_BERRY_CUSTARD)
                     .craftRemainder(Items.GLASS_BOTTLE)
                     .stacksTo(16)));
+
+    public static final DeferredItem<Item> PEPPERONI_PIZZA = ITEMS.register("pepperoni_pizza",
+            () -> new BlockItem(BlockRegistry.PEPPERONI_PIZZA.get(), basicItem()));
+    public static final DeferredItem<Item> PEPPERONI_PIZZA_SLICE = ITEMS.register("pepperoni_pizza_slice",
+            () -> new Item(foodItem(FoodValues.PIE_SLICE)));
+    public static final DeferredItem<Item> CHEESE_PIZZA = ITEMS.register("cheese_pizza",
+            () -> new BlockItem(BlockRegistry.CHEESE_PIZZA.get(), basicItem()));
+    public static final DeferredItem<Item> CHEESE_PIZZA_SLICE = ITEMS.register("cheese_pizza_slice",
+            () -> new Item(foodItem(FoodValues.PIE_SLICE)));
+
+    public static final DeferredItem<Item> CHEESE_BLOCK = ITEMS.register("cheese_block",
+            () -> new Item(foodItem(FoodValues.WHEAT_DOUGH)));
+    public static final DeferredItem<Item> PEPPERONIS = ITEMS.register("pepperonis",
+            () -> new Item(foodItem(FoodValues.MINCED_BEEF)));
+    public static final DeferredItem<Item> PIZZA_CRUST = ITEMS.register("pizza_crust",
+            () -> new Item(foodItem(FoodValues.PIE_CRUST)));
+    public static final DeferredItem<Item> SHREDDED_CHEESE = ITEMS.register("shredded_cheese",
+            () -> new Item(foodItem(FoodValues.WHEAT_DOUGH)));
+
 }

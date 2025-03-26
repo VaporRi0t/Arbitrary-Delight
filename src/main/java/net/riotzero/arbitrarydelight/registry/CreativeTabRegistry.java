@@ -15,6 +15,7 @@ public class CreativeTabRegistry {
             .icon(() -> ItemRegistry.CHICKEN_NOODLE_SOUP.get().getDefaultInstance())
             .displayItems((parameters, output) -> {
                 output.accept(ItemRegistry.AMETHYST_KNIFE.get());
+
                 output.accept(ItemRegistry.PASTA.get());
                 output.accept(ItemRegistry.EGGS_AND_POTATOES.get());
                 output.accept(ItemRegistry.CHICKEN_NOODLE_SOUP.get());
@@ -25,6 +26,14 @@ public class CreativeTabRegistry {
                 output.accept(ItemRegistry.NUGGETS_AND_FRIES.get());
                 output.accept(ItemRegistry.BERRY_MILK.get());
                 output.accept(ItemRegistry.SWEET_BERRY_CUSTARD.get());
+                output.accept(ItemRegistry.PEPPERONI_PIZZA.get());
+                output.accept(ItemRegistry.PEPPERONI_PIZZA_SLICE.get());
+                output.accept(ItemRegistry.CHEESE_PIZZA.get());
+                output.accept(ItemRegistry.CHEESE_PIZZA_SLICE.get());
+                output.accept(ItemRegistry.CHEESE_BLOCK.get());
+                output.accept(ItemRegistry.PEPPERONIS.get());
+                output.accept(ItemRegistry.PIZZA_CRUST.get());
+                output.accept(ItemRegistry.SHREDDED_CHEESE.get());
 
             })
             .build());
