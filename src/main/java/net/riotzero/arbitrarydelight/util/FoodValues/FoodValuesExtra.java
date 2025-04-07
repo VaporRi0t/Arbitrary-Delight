@@ -21,6 +21,10 @@ public class FoodValuesExtra {
     public static final FoodProperties BERRY_MILK = (new FoodProperties.Builder()).alwaysEdible().effect(() -> new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1200, 0), 1.0F).build();
     public static final Map<Item, FoodProperties> VANILLA_SOUP_EFFECTS;
     public static final FoodProperties RABBIT_STEW_BUFF;
+    public static final FoodProperties GLOW_POPSICLE = (new FoodProperties.Builder()).nutrition(3).saturationModifier(0.2F).fast().alwaysEdible().effect(() -> new MobEffectInstance(MobEffects.GLOWING, 100, 0), 1.0F).build();
+    public static final FoodProperties GLOW_COOKIES = (new FoodProperties.Builder()).nutrition(2).saturationModifier(0.1F).fast().effect(() -> new MobEffectInstance(MobEffects.GLOWING, 100, 0), 1.0F).build();
+    public static final FoodProperties GLOW_MILK =
+            (new FoodProperties.Builder()).alwaysEdible().effect(() -> new MobEffectInstance(MobEffects.GLOWING, 1200, 0), 1.0F).build();
 
     public FoodValuesExtra() {
     }

@@ -15,6 +15,7 @@ import vectorwing.farmersdelight.common.FoodValues;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
 import vectorwing.farmersdelight.common.item.DrinkableItem;
 import vectorwing.farmersdelight.common.item.KnifeItem;
+import vectorwing.farmersdelight.common.item.PopsicleItem;
 import vectorwing.farmersdelight.common.registry.ModEffects;
 
 import static vectorwing.farmersdelight.common.registry.ModItems.*;
@@ -87,6 +88,15 @@ public class ItemRegistry {
             () -> new ConsumableItem(foodItem(FoodValuesExtra.SWEET_BERRY_CUSTARD)
                     .craftRemainder(Items.GLASS_BOTTLE)
                     .stacksTo(16)));
+    public static final DeferredItem<Item> SWEET_BERRY_POPSICLE = ITEMS.register("sweet_berry_popsicle",
+            () -> new PopsicleItem(foodItem(FoodValues.POPSICLE)));
+    public static final DeferredItem<Item> GLOW_BERRY_MILK = ITEMS.register("glow_berry_milk",
+            () -> new DrinkableItem(drinkItem()
+                    .food(FoodValuesExtra.GLOW_MILK), true, false));
+    public static final DeferredItem<Item> GLOW_BERRY_POPSICLE = ITEMS.register("glow_berry_popsicle",
+            () -> new PopsicleItem(foodItem(FoodValuesExtra.GLOW_POPSICLE)));
+    public static final DeferredItem<Item> GLOW_BERRY_COOKIE = ITEMS.register("glow_berry_cookie",
+            () -> new Item(foodItem(FoodValuesExtra.GLOW_COOKIES)));
 
     public static final DeferredItem<Item> PEPPERONI_PIZZA = ITEMS.register("pepperoni_pizza",
             () -> new BlockItem(BlockRegistry.PEPPERONI_PIZZA.get(), basicItem()));

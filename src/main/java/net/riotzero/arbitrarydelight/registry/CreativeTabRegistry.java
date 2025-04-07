@@ -25,7 +25,11 @@ public class CreativeTabRegistry {
                 output.accept(ItemRegistry.COOKED_CHICKEN_NUGGETS.get());
                 output.accept(ItemRegistry.NUGGETS_AND_FRIES.get());
                 output.accept(ItemRegistry.BERRY_MILK.get());
+                output.accept(ItemRegistry.GLOW_BERRY_MILK.get());
                 output.accept(ItemRegistry.SWEET_BERRY_CUSTARD.get());
+                output.accept(ItemRegistry.SWEET_BERRY_POPSICLE.get());
+                output.accept(ItemRegistry.GLOW_BERRY_POPSICLE.get());
+                output.accept(ItemRegistry.GLOW_BERRY_COOKIE.get());
                 output.accept(ItemRegistry.PEPPERONI_PIZZA.get());
                 output.accept(ItemRegistry.PEPPERONI_PIZZA_SLICE.get());
                 output.accept(ItemRegistry.CHEESE_PIZZA.get());
