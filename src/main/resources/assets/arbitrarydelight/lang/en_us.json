@@ -14,6 +14,7 @@
   "item.arbitrarydelight.pepperoni_pizza_slice": "Slice of Pepperoni Pizza",
   "item.arbitrarydelight.cheese_pizza": "Cheese Pizza",
   "item.arbitrarydelight.cheese_pizza_slice": "Slice of Cheese Pizza",
+  "item.arbitrarydelight.glow_berry_cheesecake_slice": "Slice of Glow Berry Cheesecake",
   "item.arbitrarydelight.cheese_block": "Cheese Block",
   "item.arbitrarydelight.pepperonis": "Pepperonis",
   "item.arbitrarydelight.pizza_crust": "Pizza Crust",
@@ -25,6 +26,7 @@
 
   "block.arbitrarydelight.pepperoni_pizza": "Pepperoni Pizza",
   "block.arbitrarydelight.cheese_pizza": "Cheese Pizza",
+  "block.arbitrarydelight.glow_berry_cheesecake": "Glow Berry Cheesecake",
 
   "itemGroup.arbitrarydelight": "Arbitrary Delight"
 }

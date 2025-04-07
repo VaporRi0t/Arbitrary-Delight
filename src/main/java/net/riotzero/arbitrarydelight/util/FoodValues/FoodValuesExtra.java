@@ -25,6 +25,8 @@ public class FoodValuesExtra {
     public static final FoodProperties GLOW_COOKIES = (new FoodProperties.Builder()).nutrition(2).saturationModifier(0.1F).fast().effect(() -> new MobEffectInstance(MobEffects.GLOWING, 100, 0), 1.0F).build();
     public static final FoodProperties GLOW_MILK =
             (new FoodProperties.Builder()).alwaysEdible().effect(() -> new MobEffectInstance(MobEffects.GLOWING, 1200, 0), 1.0F).build();
+    public static final FoodProperties GLOW_PIE_SLICE =
+            (new FoodProperties.Builder()).nutrition(3).saturationModifier(0.3F).fast().effect(() -> new MobEffectInstance(MobEffects.GLOWING, 600, 0, false, false), 1.0F).build();
 
     public FoodValuesExtra() {
     }

@@ -106,6 +106,10 @@ public class ItemRegistry {
             () -> new BlockItem(BlockRegistry.CHEESE_PIZZA.get(), basicItem()));
     public static final DeferredItem<Item> CHEESE_PIZZA_SLICE = ITEMS.register("cheese_pizza_slice",
             () -> new Item(foodItem(FoodValues.PIE_SLICE)));
+    public static final DeferredItem<Item> GLOW_BERRY_CHEESECAKE = ITEMS.register("glow_berry_cheesecake",
+            () -> new BlockItem(BlockRegistry.GLOW_BERRY_CHEESECAKE.get(), basicItem()));
+    public static final DeferredItem<Item> GLOW_BERRY_CHEESECAKE_SLICE = ITEMS.register("glow_berry_cheesecake_slice",
+            () -> new Item(foodItem(FoodValuesExtra.GLOW_PIE_SLICE)));
 
     public static final DeferredItem<Item> CHEESE_BLOCK = ITEMS.register("cheese_block",
             () -> new Item(foodItem(FoodValues.WHEAT_DOUGH)));
