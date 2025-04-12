@@ -1,6 +1,7 @@
 {
   "item.arbitrarydelight.amethyst_knife": "Amethyst Knife",
   "item.arbitrarydelight.pasta": "Pasta",
+  "item.arbitrarydelight.glow_squid_ink_pasta": "Glow Squid Ink Pasta",
   "item.arbitrarydelight.eggs_and_potatoes": "Eggs and Potatoes",
   "item.arbitrarydelight.chicken_noodle_soup": "Chicken Noodle Soup",
   "item.arbitrarydelight.potato_fries": "Potato Fries",
@@ -23,10 +24,19 @@
   "item.arbitrarydelight.glow_berry_popsicle": "Glow Berry Popsicle",
   "item.arbitrarydelight.glow_berry_milk": "Glow Berry Milk",
   "item.arbitrarydelight.glow_berry_cookie": "Glow Berry Cookie",
+  "item.arbitrarydelight.golden_apple_cider": "Golden Apple Cider",
+  "item.arbitrarydelight.enchanted_golden_apple_cider": "Enchanted Golden Apple Cider",
+  "item.arbitrarydelight.egg_yolk": "Egg Yolk",
+  "item.arbitrarydelight.scrambled_eggs": "Scrambled Eggs",
+  "item.arbitrarydelight.melon_custard": "Melon Custard",
+  "item.arbitrarydelight.glistering_melon_custard": "Glistering Melon Custard",
+  "item.arbitrarydelight.glistering_melon_popsicle": "Glistering Melon Popsicle",
+  "item.arbitrarydelight.glistering_melon_juice": "Glistering Melon Juice",
 
   "block.arbitrarydelight.pepperoni_pizza": "Pepperoni Pizza",
   "block.arbitrarydelight.cheese_pizza": "Cheese Pizza",
   "block.arbitrarydelight.glow_berry_cheesecake": "Glow Berry Cheesecake",
+  "block.arbitrarydelight.shredded_cheese_bag": "Bag of Shredded Cheese",
 
   "itemGroup.arbitrarydelight": "Arbitrary Delight"
 }

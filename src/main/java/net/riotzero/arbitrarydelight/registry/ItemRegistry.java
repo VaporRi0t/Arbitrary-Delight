@@ -6,11 +6,13 @@ import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.Rarity;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.riotzero.arbitrarydelight.ArbitraryDelight;
 import net.riotzero.arbitrarydelight.util.FoodValues.FoodValuesExtra;
 
+import net.riotzero.arbitrarydelight.util.item.DrinkableItemExtra;
 import vectorwing.farmersdelight.common.FoodValues;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
 import vectorwing.farmersdelight.common.item.DrinkableItem;
@@ -38,6 +40,14 @@ public class ItemRegistry {
                     .saturationModifier(0.6f)
                     .effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT, FoodValuesExtra.MEDIUM_DURATION, 0), 1.0F)
                     .build()), true));
+    public static final DeferredItem<Item> SCRAMBLED_EGGS = ITEMS.register("scrambled_eggs",
+            () -> new ConsumableItem(bowlFoodItem((new FoodProperties.Builder())
+                    .nutrition(10)
+                    .saturationModifier(0.6f)
+                    .effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT, FoodValuesExtra.SHORT_DURATION, 0), 1.0F)
+                    .build()), true));
+    public static final DeferredItem<Item> GLOW_SQUID_INK_PASTA = ITEMS.register("glow_squid_ink_pasta",
+            () -> new ConsumableItem(bowlFoodItem(FoodValuesExtra.GLOW_SQUID_INK_PASTA), true));
     public static final DeferredItem<Item> EGGS_AND_POTATOES = ITEMS.register("eggs_and_potatoes",
             () -> new ConsumableItem(bowlFoodItem((new FoodProperties.Builder())
                     .nutrition(11)
@@ -51,6 +61,12 @@ public class ItemRegistry {
                     .effect(() -> new MobEffectInstance(ModEffects.COMFORT, FoodValuesExtra.LONG_DURATION, 0), 1.0F)
                     .build()), true));
     public static final DeferredItem<Item> POTATO_FRIES = ITEMS.register("potato_fries",
+            () -> new ConsumableItem(foodItem((new FoodProperties.Builder())
+                    .nutrition(1)
+                    .saturationModifier(0.3f)
+                    .fast()
+                    .build())));
+    public static final DeferredItem<Item> EGG_YOLK = ITEMS.register("egg_yolk",
             () -> new ConsumableItem(foodItem((new FoodProperties.Builder())
                     .nutrition(1)
                     .saturationModifier(0.3f)
@@ -84,12 +100,25 @@ public class ItemRegistry {
     public static final DeferredItem<Item> BERRY_MILK = ITEMS.register("berry_milk",
             () -> new DrinkableItem(drinkItem()
                     .food(FoodValuesExtra.BERRY_MILK), true, false));
+public static final DeferredItem<Item> GLISTERING_MELON_JUICE = ITEMS.register("glistering_melon_juice",
+            () -> new DrinkableItem(drinkItem()
+                    .food(FoodValuesExtra.GLISTERING_MELON_JUICE), true, false));
     public static final DeferredItem<Item> SWEET_BERRY_CUSTARD = ITEMS.register("sweet_berry_custard",
             () -> new ConsumableItem(foodItem(FoodValuesExtra.SWEET_BERRY_CUSTARD)
                     .craftRemainder(Items.GLASS_BOTTLE)
                     .stacksTo(16)));
+    public static final DeferredItem<Item> MELON_CUSTARD = ITEMS.register("melon_custard",
+            () -> new ConsumableItem(foodItem(FoodValuesExtra.MELON_CUSTARD)
+                    .craftRemainder(Items.GLASS_BOTTLE)
+                    .stacksTo(16)));
+    public static final DeferredItem<Item> GLISTERING_MELON_CUSTARD = ITEMS.register("glistering_melon_custard",
+            () -> new ConsumableItem(foodItem(FoodValuesExtra.GLISTERING_MELON_CUSTARD)
+                    .craftRemainder(Items.GLASS_BOTTLE)
+                    .stacksTo(16)));
     public static final DeferredItem<Item> SWEET_BERRY_POPSICLE = ITEMS.register("sweet_berry_popsicle",
             () -> new PopsicleItem(foodItem(FoodValues.POPSICLE)));
+    public static final DeferredItem<Item> GLISTERING_MELON_POPSICLE = ITEMS.register("glistering_melon_popsicle",
+            () -> new PopsicleItem(foodItem(FoodValuesExtra.GLISTERING_MELON_POPSICLE)));
     public static final DeferredItem<Item> GLOW_BERRY_MILK = ITEMS.register("glow_berry_milk",
             () -> new DrinkableItem(drinkItem()
                     .food(FoodValuesExtra.GLOW_MILK), true, false));
@@ -97,6 +126,14 @@ public class ItemRegistry {
             () -> new PopsicleItem(foodItem(FoodValuesExtra.GLOW_POPSICLE)));
     public static final DeferredItem<Item> GLOW_BERRY_COOKIE = ITEMS.register("glow_berry_cookie",
             () -> new Item(foodItem(FoodValuesExtra.GLOW_COOKIES)));
+
+    public static final DeferredItem<Item> GOLDEN_APPLE_CIDER = ITEMS.register("golden_apple_cider",
+            () -> new DrinkableItem(drinkItem().food(FoodValuesExtra.GOLDEN_APPLE_CIDER).rarity(Rarity.RARE), true,
+                    false));
+    public static final DeferredItem<Item> ENCHANTED_GOLDEN_APPLE_CIDER = ITEMS.register("enchanted_golden_apple_cider",
+            () -> new DrinkableItemExtra(drinkItem().food(FoodValuesExtra.ENCHANTED_GOLDEN_APPLE_CIDER).rarity(Rarity.EPIC),
+                    true,
+                    false));
 
     public static final DeferredItem<Item> PEPPERONI_PIZZA = ITEMS.register("pepperoni_pizza",
             () -> new BlockItem(BlockRegistry.PEPPERONI_PIZZA.get(), basicItem()));
@@ -119,5 +156,8 @@ public class ItemRegistry {
             () -> new Item(foodItem(FoodValues.PIE_CRUST)));
     public static final DeferredItem<Item> SHREDDED_CHEESE = ITEMS.register("shredded_cheese",
             () -> new Item(foodItem(FoodValues.WHEAT_DOUGH)));
+
+    public static final DeferredItem<Item> SHREDDED_CHEESE_BAG = ITEMS.register("shredded_cheese_bag",
+            () -> new BlockItem(BlockRegistry.SHREDDED_CHEESE_BAG.get(), basicItem()));
 
 }

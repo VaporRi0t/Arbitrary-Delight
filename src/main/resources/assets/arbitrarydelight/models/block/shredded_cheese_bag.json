@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "arbitrarydelight:block/bag_bottom",
+    "east": "arbitrarydelight:block/bag_side",
+    "north": "arbitrarydelight:block/bag_side_tied",
+    "particle": "arbitrarydelight:block/shredded_cheese_bag_top",
+    "south": "arbitrarydelight:block/bag_side_tied",
+    "up": "arbitrarydelight:block/shredded_cheese_bag_top",
+    "west": "arbitrarydelight:block/bag_side"
+  }
+}
