@@ -8,6 +8,6 @@ Arbitrary Delight requires Farmer's Delight, you can also use JEI for recipes.
 ## About
 Heres a list of new additions added (FOR NOW), remember this mod is in beta and more additions will be added soon :)
 
-![arbitrary delight list](https://cdn.modrinth.com/data/cached_images/36f3f1783e87b79c999b1398e50f228e65400bb5.png)
+![arbitrary delight list](https://cdn.modrinth.com/data/cached_images/e0cca45c14536bff5a997383c059894346850d0c.png)
 
 Most meals/drinks are made in the cooking pot but some can be crafted!
