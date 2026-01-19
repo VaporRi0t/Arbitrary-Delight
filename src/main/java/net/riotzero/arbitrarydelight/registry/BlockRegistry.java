@@ -27,5 +27,10 @@ public class BlockRegistry {
             () -> new PieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ItemRegistry.GLOW_BERRY_CHEESECAKE_SLICE));
     public static final DeferredBlock<Block> SHREDDED_CHEESE_BAG = BLOCKS.register("shredded_cheese_bag",
             () -> new Block(Block.Properties.ofFullCopy(Blocks.WHITE_WOOL)));
+    public static final DeferredBlock<Block> HONEY_PIE = BLOCKS.register("honey_pie",
+            () -> new PieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ItemRegistry.HONEY_PIE_SLICE));
+    public static final DeferredBlock<Block> HONEY_GLAZED_CHOCOLATE_PIE = BLOCKS.register("honey_glazed_chocolate_pie",
+            () -> new PieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE),
+                    ItemRegistry.HONEY_GLAZED_CHOCOLATE_PIE_SLICE));
 
 }
