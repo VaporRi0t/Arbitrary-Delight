@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " MM",
+    "wMM",
+    "#w "
+  ],
+  "key": {
+    "M": {
+      "item": "minecraft:honeycomb"
+    },
+    "w": {
+      "item": "minecraft:ice"
+    },
+    "#": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "count": 1,
+    "id": "arbitrarydelight:honey_popsicle"
+  }
+}

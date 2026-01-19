@@ -1,0 +1,19 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "arbitrarydelight:honey_glazed_chocolate_pie"
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 4,
+        "id": "arbitrarydelight:honey_glazed_chocolate_pie_slice"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "c:tools/knife"
+  }
+}

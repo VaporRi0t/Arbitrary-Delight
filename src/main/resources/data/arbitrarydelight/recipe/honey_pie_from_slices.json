@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "ss",
+    "ss"
+  ],
+  "key": {
+    "s": {
+      "item": "arbitrarydelight:honey_pie_slice"
+    }
+  },
+  "result": {
+    "count": 1,
+    "id": "arbitrarydelight:honey_pie"
+  }
+}

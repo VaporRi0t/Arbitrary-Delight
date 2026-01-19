@@ -12,12 +12,9 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import net.riotzero.arbitrarydelight.ArbitraryDelight;
 import net.riotzero.arbitrarydelight.util.FoodValues.FoodValuesExtra;
 
-import net.riotzero.arbitrarydelight.util.item.DrinkableItemExtra;
+import net.riotzero.arbitrarydelight.util.item.*;
 import vectorwing.farmersdelight.common.FoodValues;
-import vectorwing.farmersdelight.common.item.ConsumableItem;
-import vectorwing.farmersdelight.common.item.DrinkableItem;
-import vectorwing.farmersdelight.common.item.KnifeItem;
-import vectorwing.farmersdelight.common.item.PopsicleItem;
+import vectorwing.farmersdelight.common.item.*;
 import vectorwing.farmersdelight.common.registry.ModEffects;
 
 import static vectorwing.farmersdelight.common.registry.ModItems.*;
@@ -91,6 +88,8 @@ public class ItemRegistry {
                     .saturationModifier(0.6f)
                     .fast()
                     .build())));
+    public static final DeferredItem<Item> DARK_COCOA_BEANS = ITEMS.register("dark_cocoa_beans",
+            () -> new Item(basicItem()));
     public static final DeferredItem<Item> NUGGETS_AND_FRIES = ITEMS.register("nuggets_and_fries",
             () -> new ConsumableItem(bowlFoodItem((new FoodProperties.Builder())
                     .nutrition(10)
@@ -100,6 +99,8 @@ public class ItemRegistry {
     public static final DeferredItem<Item> BERRY_MILK = ITEMS.register("berry_milk",
             () -> new DrinkableItem(drinkItem()
                     .food(FoodValuesExtra.BERRY_MILK), true, false));
+    public static final DeferredItem<Item> HOT_DARK_COCOA = ITEMS.register("hot_dark_cocoa",
+            () -> new HotCocoaItem(drinkItem()));
 public static final DeferredItem<Item> GLISTERING_MELON_JUICE = ITEMS.register("glistering_melon_juice",
             () -> new DrinkableItem(drinkItem()
                     .food(FoodValuesExtra.GLISTERING_MELON_JUICE), true, false));
@@ -107,6 +108,22 @@ public static final DeferredItem<Item> GLISTERING_MELON_JUICE = ITEMS.register("
             () -> new ConsumableItem(foodItem(FoodValuesExtra.SWEET_BERRY_CUSTARD)
                     .craftRemainder(Items.GLASS_BOTTLE)
                     .stacksTo(16)));
+    public static final DeferredItem<Item> CHOCOLATE_CUSTARD = ITEMS.register("chocolate_custard",
+            () -> new ConsumableItem(foodItem(FoodValuesExtra.SWEET_BERRY_CUSTARD)
+                    .craftRemainder(Items.GLASS_BOTTLE)
+                    .stacksTo(16)));
+    public static final DeferredItem<Item> DARK_CHOCOLATE_CUSTARD = ITEMS.register("dark_chocolate_custard",
+            () -> new ConsumableItem(foodItem(FoodValuesExtra.SWEET_BERRY_CUSTARD)
+                    .craftRemainder(Items.GLASS_BOTTLE)
+                    .stacksTo(16)));
+    public static final DeferredItem<Item> CHORUS_FRUIT_CUSTARD = ITEMS.register("chorus_fruit_custard",
+            () -> new ChorusFruitCustardItem(
+                    new Item.Properties().food(FoodValuesExtra.CHORUS_FRUIT_CUSTARD)
+            ));
+    public static final DeferredItem<Item> CHORUS_FRUIT_COOKIE = ITEMS.register("chorus_fruit_cookie",
+            () -> new ChorusFruitCookieItem(
+                    new Item.Properties().food(FoodValuesExtra.CHORUS_FRUIT_COOKIE)
+            ));
     public static final DeferredItem<Item> MELON_CUSTARD = ITEMS.register("melon_custard",
             () -> new ConsumableItem(foodItem(FoodValuesExtra.MELON_CUSTARD)
                     .craftRemainder(Items.GLASS_BOTTLE)
@@ -117,6 +134,15 @@ public static final DeferredItem<Item> GLISTERING_MELON_JUICE = ITEMS.register("
                     .stacksTo(16)));
     public static final DeferredItem<Item> SWEET_BERRY_POPSICLE = ITEMS.register("sweet_berry_popsicle",
             () -> new PopsicleItem(foodItem(FoodValues.POPSICLE)));
+    public static final DeferredItem<Item> CHOCOLATE_POPSICLE = ITEMS.register("chocolate_popsicle",
+            () -> new PopsicleItem(foodItem(FoodValues.POPSICLE)));
+    public static final DeferredItem<Item> CHORUS_FRUIT_POPSICLE = ITEMS.register("chorus_fruit_popsicle",
+            () -> new ChorusFruitPopsicleItem(
+                    new Item.Properties().food(FoodValuesExtra.CHORUS_FRUIT_POPSICLE)
+            ));
+    public static final DeferredItem<Item> CHORUS_FRUIT_JUICE = ITEMS.register("chorus_fruit_juice",
+            () -> new DrinkableItem(drinkItem()
+                    .food(FoodValuesExtra.CHORUS_FRUIT_JUICE), true, false));
     public static final DeferredItem<Item> GLISTERING_MELON_POPSICLE = ITEMS.register("glistering_melon_popsicle",
             () -> new PopsicleItem(foodItem(FoodValuesExtra.GLISTERING_MELON_POPSICLE)));
     public static final DeferredItem<Item> GLOW_BERRY_MILK = ITEMS.register("glow_berry_milk",
@@ -126,6 +152,34 @@ public static final DeferredItem<Item> GLISTERING_MELON_JUICE = ITEMS.register("
             () -> new PopsicleItem(foodItem(FoodValuesExtra.GLOW_POPSICLE)));
     public static final DeferredItem<Item> GLOW_BERRY_COOKIE = ITEMS.register("glow_berry_cookie",
             () -> new Item(foodItem(FoodValuesExtra.GLOW_COOKIES)));
+
+    public static final DeferredItem<Item> HONEY_GLAZED_CHOCOLATE_CHIP_COOKIE = ITEMS.register(
+            "honey_glazed_chocolate_chip_cookie",
+            () -> new Item(foodItem(FoodValuesExtra.COOKIES)));
+    public static final DeferredItem<Item> DARK_CHOCOLATE_COOKIE = ITEMS.register(
+            "dark_chocolate_cookie",
+            () -> new Item(foodItem(FoodValuesExtra.COOKIES)));
+    public static final DeferredItem<Item> HONEY_GLAZED_CHOCOLATE_POPSICLE = ITEMS.register(
+            "honey_glazed_chocolate_popsicle",
+            () -> new PopsicleItem(foodItem(FoodValues.POPSICLE)));
+    public static final DeferredItem<Item> DARK_CHOCOLATE_POPSICLE = ITEMS.register(
+            "dark_chocolate_popsicle",
+            () -> new PopsicleItem(foodItem(FoodValues.POPSICLE)));
+
+    public static final DeferredItem<Item> HONEY_PIE = ITEMS.register("honey_pie",
+            () -> new BlockItem(BlockRegistry.HONEY_PIE.get(), basicItem()));
+    public static final DeferredItem<Item> HONEY_PIE_SLICE = ITEMS.register("honey_pie_slice",
+            () -> new Item(foodItem(FoodValues.PIE_SLICE)));
+
+    public static final DeferredItem<Item> HONEY_GLAZED_CHOCOLATE_PIE = ITEMS.register("honey_glazed_chocolate_pie",
+            () -> new BlockItem(BlockRegistry.HONEY_GLAZED_CHOCOLATE_PIE.get(), basicItem()));
+    public static final DeferredItem<Item> HONEY_GLAZED_CHOCOLATE_PIE_SLICE = ITEMS.register("honey_glazed_chocolate_pie_slice",
+            () -> new Item(foodItem(FoodValues.PIE_SLICE)));
+
+    public static final DeferredItem<Item> HONEY_POPSICLE = ITEMS.register("honey_popsicle",
+            () -> new PopsicleItem(foodItem(FoodValues.POPSICLE)));
+    public static final DeferredItem<Item> HONEY_CUSTARD = ITEMS.register("honey_custard",
+            () -> new ConsumableItem(foodItem(FoodValuesExtra.SWEET_BERRY_CUSTARD)));
 
     public static final DeferredItem<Item> GOLDEN_APPLE_CIDER = ITEMS.register("golden_apple_cider",
             () -> new DrinkableItem(drinkItem().food(FoodValuesExtra.GOLDEN_APPLE_CIDER).rarity(Rarity.RARE), true,

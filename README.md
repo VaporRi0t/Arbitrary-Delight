@@ -11,3 +11,5 @@ Heres a list of new additions added (FOR NOW), remember this mod is in beta and 
 ![arbitrary delight list](https://cdn.modrinth.com/data/cached_images/ad54efe58f3b5c754793771bf94182e95e685288.png)
 
 Most meals/drinks are made in the cooking pot but some can be crafted!
+
+Now for 1.20.1 Forge!

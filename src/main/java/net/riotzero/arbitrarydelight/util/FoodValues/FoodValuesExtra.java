@@ -9,6 +9,7 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.riotzero.arbitrarydelight.registry.EffectRegistry;
 import vectorwing.farmersdelight.common.registry.ModEffects;
 
 public class FoodValuesExtra {
@@ -45,6 +46,43 @@ public class FoodValuesExtra {
                     600, 1), 1.0F).effect(() -> new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE,
                     7200, 0), 1.0F).effect(() -> new MobEffectInstance(MobEffects.FIRE_RESISTANCE,
                     7200, 0), 1.0F).build();
+    public static final FoodProperties COOKIES = (new FoodProperties.Builder())
+            .nutrition(2).saturationModifier(0.1f).fast().build();
+
+    public static final FoodProperties CHORUS_FRUIT_POPSICLE =
+            (new FoodProperties.Builder())
+                    .nutrition(3)
+                    .saturationModifier(0.2F)
+                    .fast()
+                    .alwaysEdible()
+                    .build();
+    public static final FoodProperties CHORUS_FRUIT_CUSTARD =
+            (new FoodProperties.Builder())
+                    .nutrition(7)
+                    .saturationModifier(0.6F)
+                    .alwaysEdible()
+                    .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 100, 0), 1.0F)
+                    .build();
+    public static final FoodProperties CHORUS_FRUIT_COOKIE =
+            new FoodProperties.Builder()
+                    .nutrition(2)
+                    .saturationModifier(0.1F)
+                    .fast()
+                    .alwaysEdible()
+                    .effect(
+                            () -> new MobEffectInstance(EffectRegistry.UNSTABLE_CHORUS, 100, 0),
+                            1.0F
+                    )
+                    .build();
+    public static final FoodProperties CHORUS_FRUIT_JUICE =
+            new FoodProperties.Builder()
+                    .alwaysEdible()
+                    .effect(
+                            () -> new MobEffectInstance(EffectRegistry.UNSTABLE_CHORUS, 200, 0),
+                            1.0F
+                    )
+                    .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 1200, 0), 1.0F)
+                    .build();
 
 
 

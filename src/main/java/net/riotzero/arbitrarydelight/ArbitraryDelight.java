@@ -2,6 +2,7 @@ package net.riotzero.arbitrarydelight;
 
 import net.riotzero.arbitrarydelight.registry.BlockRegistry;
 import net.riotzero.arbitrarydelight.registry.CreativeTabRegistry;
+import net.riotzero.arbitrarydelight.registry.EffectRegistry;
 import net.riotzero.arbitrarydelight.registry.ItemRegistry;
 import org.slf4j.Logger;
 
@@ -44,6 +45,7 @@ public class ArbitraryDelight {
         ItemRegistry.ITEMS.register(modEventBus);
         BlockRegistry.BLOCKS.register(modEventBus);
         CreativeTabRegistry.CREATIVE_MODE_TABS.register(modEventBus);
+        EffectRegistry.EFFECTS.register(modEventBus);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
