@@ -21,17 +21,17 @@ public class BlockRegistry {
     }
 
     public static final RegistryObject<Block> PEPPERONI_PIZZA = BLOCKS.register("pepperoni_pizza",
-            () -> new PieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ItemRegistry.PEPPERONI_PIZZA_SLICE));
+            () -> new PieBlock(BlockBehaviour.Properties.copy(Blocks.CAKE), ItemRegistry.PEPPERONI_PIZZA_SLICE));
     public static final RegistryObject<Block> CHEESE_PIZZA = BLOCKS.register("cheese_pizza",
-            () -> new PieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ItemRegistry.CHEESE_PIZZA_SLICE));
+            () -> new PieBlock(BlockBehaviour.Properties.copy(Blocks.CAKE), ItemRegistry.CHEESE_PIZZA_SLICE));
     public static final RegistryObject<Block> GLOW_BERRY_CHEESECAKE = BLOCKS.register("glow_berry_cheesecake",
-            () -> new PieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ItemRegistry.GLOW_BERRY_CHEESECAKE_SLICE));
+            () -> new PieBlock(BlockBehaviour.Properties.copy(Blocks.CAKE), ItemRegistry.GLOW_BERRY_CHEESECAKE_SLICE));
     public static final RegistryObject<Block> SHREDDED_CHEESE_BAG = BLOCKS.register("shredded_cheese_bag",
-            () -> new Block(Block.Properties.ofFullCopy(Blocks.WHITE_WOOL)));
+            () -> new Block(Block.Properties.copy(Blocks.WHITE_WOOL)));
     public static final RegistryObject<Block> HONEY_PIE = BLOCKS.register("honey_pie",
-            () -> new PieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), ItemRegistry.HONEY_PIE_SLICE));
+            () -> new PieBlock(BlockBehaviour.Properties.copy(Blocks.CAKE), ItemRegistry.HONEY_PIE_SLICE));
     public static final RegistryObject<Block> HONEY_GLAZED_CHOCOLATE_PIE = BLOCKS.register("honey_glazed_chocolate_pie",
-            () -> new PieBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE),
+            () -> new PieBlock(BlockBehaviour.Properties.copy(Blocks.CAKE),
                     ItemRegistry.HONEY_GLAZED_CHOCOLATE_PIE_SLICE));
 
 }

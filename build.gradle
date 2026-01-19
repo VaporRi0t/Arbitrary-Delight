@@ -17,57 +17,46 @@ java {
 }
 
 minecraft {
-    mappings channel: mappings_channel, version: mappings_version
-    copyIdeResources = true
+    // REQUIRED: if this is missing you will get the mappingChannel provider error
+    mappings channel: 'official', version: '1.20.1'
 
     runs {
-        client {
+        configureEach {
             workingDirectory project.file('run')
-            property 'forge.logging.markers', 'REGISTRIES'
-            property 'forge.logging.console.level', 'debug'
-            mods {
-                "${mod_id}" {
-                    source sourceSets.main
-                }
-            }
+
+            // Fix mixin deps (Farmer's Delight, etc.) in dev
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${project.buildDir}/createSrgToMcp/output.srg"
+
+            // Optional, but commonly used with the above:
+            property 'mixin.env.refMapRemappingEnv', 'searge'
         }
 
-        server {
-            workingDirectory project.file('run')
-            property 'forge.logging.markers', 'REGISTRIES'
-            property 'forge.logging.console.level', 'debug'
-            mods {
-                "${mod_id}" {
-                    source sourceSets.main
-                }
-            }
-        }
+        client { }
+        server { }
 
         data {
-            workingDirectory project.file('run')
-            property 'forge.logging.markers', 'REGISTRIES'
-            property 'forge.logging.console.level', 'debug'
-            args '--mod', mod_id, '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
-            mods {
-                "${mod_id}" {
-                    source sourceSets.main
-                }
-            }
+            args '--mod', 'arbitrarydelight', '--all',
+                    '--output', file('src/generated/resources/'),
+                    '--existing', file('src/main/resources/')
         }
     }
 }
+
 
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
     maven { url = 'https://www.cursemaven.com' }
     maven { url = 'https://maven.blamejared.com' }
+    //flatDir { dirs 'libs' }
 }
 
 dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
 
     // Farmer's Delight (CurseMaven)
+    //implementation fg.deobf(files("libs/FarmersDelight-1.20.1-1.2.9.jar"))
     implementation fg.deobf("curse.maven:farmers-delight-398521:${farmers_delight_file}")
 
     // JEI (optional)

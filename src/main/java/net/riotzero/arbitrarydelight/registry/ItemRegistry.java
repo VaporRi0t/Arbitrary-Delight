@@ -3,10 +3,7 @@ package net.riotzero.arbitrarydelight.registry;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.*;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -26,67 +23,66 @@ public class ItemRegistry {
     public static final RegistryObject<Item> AMETHYST_KNIFE = ITEMS.register("amethyst_knife",
             () -> new KnifeItem(
                     MaterialRegistry.AMETHYST,
+                    2,
+                    -2.0F,
                     new Item.Properties()
-                            .attributes(KnifeItem.createAttributes(
-                                    MaterialRegistry.AMETHYST,
-                                    1.8F,
-                                    -2
-                            ))));
+            ));
+
     public static final RegistryObject<Item> PASTA = ITEMS.register("pasta",
             () -> new ConsumableItem(bowlFoodItem((new FoodProperties.Builder())
                     .nutrition(10)
-                    .saturationModifier(0.6f)
-                    .effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT, FoodValuesExtra.MEDIUM_DURATION, 0), 1.0F)
+                    .saturationMod(0.6f)
+                    .effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), FoodValuesExtra.MEDIUM_DURATION, 0), 1.0F)
                     .build()), true));
     public static final RegistryObject<Item> SCRAMBLED_EGGS = ITEMS.register("scrambled_eggs",
             () -> new ConsumableItem(bowlFoodItem((new FoodProperties.Builder())
                     .nutrition(10)
-                    .saturationModifier(0.6f)
-                    .effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT, FoodValuesExtra.SHORT_DURATION, 0), 1.0F)
+                    .saturationMod(0.6f)
+                    .effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), FoodValuesExtra.SHORT_DURATION, 0), 1.0F)
                     .build()), true));
     public static final RegistryObject<Item> GLOW_SQUID_INK_PASTA = ITEMS.register("glow_squid_ink_pasta",
             () -> new ConsumableItem(bowlFoodItem(FoodValuesExtra.GLOW_SQUID_INK_PASTA), true));
     public static final RegistryObject<Item> EGGS_AND_POTATOES = ITEMS.register("eggs_and_potatoes",
             () -> new ConsumableItem(bowlFoodItem((new FoodProperties.Builder())
                     .nutrition(11)
-                    .saturationModifier(0.6f)
-                    .effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT, FoodValuesExtra.SHORT_DURATION, 0), 1.0F)
+                    .saturationMod(0.6f)
+                    .effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), FoodValuesExtra.SHORT_DURATION, 0), 1.0F)
                     .build()), true));
     public static final RegistryObject<Item> CHICKEN_NOODLE_SOUP = ITEMS.register("chicken_noodle_soup",
             () -> new ConsumableItem(bowlFoodItem((new FoodProperties.Builder())
                     .nutrition(16)
-                    .saturationModifier(0.9f)
-                    .effect(() -> new MobEffectInstance(ModEffects.COMFORT, FoodValuesExtra.LONG_DURATION, 0), 1.0F)
+                    .saturationMod(0.9f)
+                    .effect(() -> new MobEffectInstance(ModEffects.COMFORT.get(), FoodValuesExtra.LONG_DURATION, 0), 1.0F)
                     .build()), true));
     public static final RegistryObject<Item> POTATO_FRIES = ITEMS.register("potato_fries",
             () -> new ConsumableItem(foodItem((new FoodProperties.Builder())
                     .nutrition(1)
-                    .saturationModifier(0.3f)
+                    .saturationMod(0.3f)
                     .fast()
                     .build())));
     public static final RegistryObject<Item> EGG_YOLK = ITEMS.register("egg_yolk",
             () -> new ConsumableItem(foodItem((new FoodProperties.Builder())
                     .nutrition(1)
-                    .saturationModifier(0.3f)
+                    .saturationMod(0.3f)
                     .fast()
                     .build())));
     public static final RegistryObject<Item> BAKED_POTATO_FRIES = ITEMS.register("baked_potato_fries",
             () -> new ConsumableItem(foodItem((new FoodProperties.Builder())
                     .nutrition(3)
-                    .saturationModifier(0.2f)
+                    .saturationMod(0.2f)
                     .fast()
                     .build())));
     public static final RegistryObject<Item> CHICKEN_NUGGETS = ITEMS.register("chicken_nuggets",
             () -> new ConsumableItem(foodItem((new FoodProperties.Builder())
                     .nutrition(1)
-                    .saturationModifier(0.3f)
+                    .saturationMod(0.3f)
                     .effect(() -> new MobEffectInstance(MobEffects.HUNGER, 600, 0), 0.3F)
                     .fast()
                     .build())));
     public static final RegistryObject<Item> COOKED_CHICKEN_NUGGETS = ITEMS.register("cooked_chicken_nuggets",
             () -> new ConsumableItem(foodItem((new FoodProperties.Builder())
                     .nutrition(2)
-                    .saturationModifier(0.6f)
+                    .saturationMod(0.6f)
                     .fast()
                     .build())));
     public static final RegistryObject<Item> DARK_COCOA_BEANS = ITEMS.register("dark_cocoa_beans",
@@ -94,8 +90,8 @@ public class ItemRegistry {
     public static final RegistryObject<Item> NUGGETS_AND_FRIES = ITEMS.register("nuggets_and_fries",
             () -> new ConsumableItem(bowlFoodItem((new FoodProperties.Builder())
                     .nutrition(10)
-                    .saturationModifier(0.8f)
-                    .effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT, FoodValuesExtra.MEDIUM_DURATION, 0), 1.0F)
+                    .saturationMod(0.8f)
+                    .effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), FoodValuesExtra.MEDIUM_DURATION, 0), 1.0F)
                     .build()), true));
     public static final RegistryObject<Item> BERRY_MILK = ITEMS.register("berry_milk",
             () -> new DrinkableItem(drinkItem()

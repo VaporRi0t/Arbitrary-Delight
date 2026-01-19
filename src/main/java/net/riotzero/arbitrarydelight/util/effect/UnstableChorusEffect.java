@@ -17,18 +17,17 @@ public class UnstableChorusEffect extends MobEffect {
     }
 
     @Override
-    public boolean applyEffectTick(LivingEntity entity, int amplifier) {
+    public void applyEffectTick(LivingEntity entity, int amplifier) {
         if (!entity.level().isClientSide && entity instanceof ServerPlayer player) {
-            MobEffectInstance effect = player.getEffect(EffectRegistry.UNSTABLE_CHORUS);
+            MobEffectInstance effect = player.getEffect(EffectRegistry.UNSTABLE_CHORUS.get());
             if (effect != null && effect.getDuration() == 1) {
                 chorusFruitTeleport(player);
             }
         }
-        return true;
     }
 
     @Override
-    public boolean shouldApplyEffectTickThisTick(int duration, int amplifier) {
+    public boolean isDurationEffectTick(int duration, int amplifier) {
         return true;
     }
 
