@@ -3,14 +3,14 @@ package net.riotzero.arbitrarydelight.registry;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
-import net.neoforged.neoforge.registries.DeferredHolder;
-import net.neoforged.neoforge.registries.DeferredRegister;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.RegistryObject;
 import net.riotzero.arbitrarydelight.ArbitraryDelight;
 
 public class CreativeTabRegistry {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, ArbitraryDelight.MOD_ID);
 
-    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> ARBITRARYDELIGHT_TAB = CREATIVE_MODE_TABS.register("arbitrarydelight_tab", () -> CreativeModeTab.builder()
+    public static final RegistryObject<CreativeModeTab> ARBITRARYDELIGHT_TAB = CREATIVE_MODE_TABS.register("arbitrarydelight_tab", () -> CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.arbitrarydelight"))
             .icon(() -> ItemRegistry.CHICKEN_NOODLE_SOUP.get().getDefaultInstance())
             .displayItems((parameters, output) -> {
