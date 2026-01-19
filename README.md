@@ -20,7 +20,7 @@ Arbitrary Delight introduces a growing collection of recipes that you can cook i
 
 ---
 
-## Current Additions (v0.8.0)
+## Some Additions (v0.8.0)
 
 Below is a preview of some of the items included in **Arbitrary Delight v0.8.0**.  
 This list is **not exhaustive**—it only shows a selection of the new content. More meals and drinks are available in-game, with additional features planned for future updates.
