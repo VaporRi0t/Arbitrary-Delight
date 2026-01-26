@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "wMw",
+    " w ",
+    "   "
+  ],
+  "key": {
+    "M": {
+      "tag": "c:foods/milk"
+    },
+    "w": {
+      "item": "farmersdelight:wheat_dough"
+    }
+  },
+  "result": {
+    "count": 1,
+    "item": "arbitrarydelight:pizza_crust"
+  }
+}

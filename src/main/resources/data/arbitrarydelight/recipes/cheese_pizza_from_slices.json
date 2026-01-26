@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "ad_cheese_pizza",
+  "key": {
+    "#": {
+      "item": "arbitrarydelight:cheese_pizza_slice"
+    }
+  },
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "result": {
+    "count": 1,
+    "item": "arbitrarydelight:cheese_pizza"
+  }
+}

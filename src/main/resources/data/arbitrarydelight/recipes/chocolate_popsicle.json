@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " MM",
+    "wMM",
+    "#w "
+  ],
+  "key": {
+    "M": {
+      "item": "minecraft:cocoa_beans"
+    },
+    "w": {
+      "item": "minecraft:ice"
+    },
+    "#": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "count": 1,
+    "item": "arbitrarydelight:chocolate_popsicle"
+  }
+}

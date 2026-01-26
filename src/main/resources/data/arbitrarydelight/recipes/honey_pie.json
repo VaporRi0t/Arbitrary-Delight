@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "hhh",
+    "mmm",
+    "scs"
+  ],
+  "key": {
+    "h": {
+      "item": "minecraft:honey_bottle"
+    },
+    "m": {
+      "tag": "c:foods/milk"
+    },
+    "s": {
+      "item": "minecraft:sugar"
+    },
+    "c": {
+      "item": "farmersdelight:pie_crust"
+    }
+  },
+  "result": {
+    "count": 1,
+    "item": "arbitrarydelight:honey_pie"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "ad_pepperoni_pizza",
+  "key": {
+    "#": {
+      "item": "arbitrarydelight:pepperoni_pizza_slice"
+    }
+  },
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "result": {
+    "count": 1,
+    "item": "arbitrarydelight:pepperoni_pizza"
+  }
+}
