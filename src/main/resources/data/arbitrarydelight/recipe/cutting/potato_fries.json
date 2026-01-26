@@ -1,0 +1,19 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "tag": "c:crops/potato"
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 2,
+        "id": "arbitrarydelight:potato_fries"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "c:tools/knife"
+  }
+}

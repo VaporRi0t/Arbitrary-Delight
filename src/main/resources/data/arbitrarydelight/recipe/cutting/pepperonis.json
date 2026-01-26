@@ -1,0 +1,19 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "farmersdelight:minced_beef"
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 2,
+        "id": "arbitrarydelight:pepperonis"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "c:tools/knife"
+  }
+}

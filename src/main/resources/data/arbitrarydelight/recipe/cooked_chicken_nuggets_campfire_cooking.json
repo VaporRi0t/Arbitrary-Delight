@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "category": "food",
+  "cookingtime": 600,
+  "experience": 0.35,
+  "ingredient": {
+    "item": "arbitrarydelight:chicken_nuggets"
+  },
+  "result": {
+    "count": 1,
+    "id": "arbitrarydelight:cooked_chicken_nuggets"
+  }
+}
