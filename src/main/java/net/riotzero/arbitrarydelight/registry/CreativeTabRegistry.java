@@ -1,81 +1,93 @@
 package net.riotzero.arbitrarydelight.registry;
 
-import net.minecraft.core.registries.Registries;
-import net.minecraft.network.chat.Component;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.RegistryObject;
+import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
+import net.minecraft.text.Text;
+import net.minecraft.util.Identifier;
 import net.riotzero.arbitrarydelight.ArbitraryDelight;
 
 public class CreativeTabRegistry {
-    public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, ArbitraryDelight.MOD_ID);
 
-    public static final RegistryObject<CreativeModeTab> ARBITRARYDELIGHT_TAB = CREATIVE_MODE_TABS.register("arbitrarydelight_tab", () -> CreativeModeTab.builder()
-            .title(Component.translatable("itemGroup.arbitrarydelight"))
-            .icon(() -> ItemRegistry.CHICKEN_NOODLE_SOUP.get().getDefaultInstance())
-            .displayItems((parameters, output) -> {
+    public static final ItemGroup ARBITRARYDELIGHT_TAB = Registry.register(
+            Registries.ITEM_GROUP,
+            new Identifier(ArbitraryDelight.MOD_ID, "arbitrarydelight_tab"),
+            FabricItemGroup.builder()
+                    .displayName(Text.translatable("itemGroup.arbitrarydelight"))
+                    .icon(() -> new ItemStack(ItemRegistry.CHICKEN_NOODLE_SOUP))
+                    .entries((context, entries) -> {
 
-                // Blocks
-                output.accept(ItemRegistry.SHREDDED_CHEESE_BAG.get());
-                // Tools
-                output.accept(ItemRegistry.AMETHYST_KNIFE.get());
-                // Ingredients
-                output.accept(ItemRegistry.DARK_COCOA_BEANS.get());
-                output.accept(ItemRegistry.EGG_YOLK.get());
-                output.accept(ItemRegistry.CHEESE_BLOCK.get());
-                output.accept(ItemRegistry.SHREDDED_CHEESE.get());
-                output.accept(ItemRegistry.PEPPERONIS.get());
-                output.accept(ItemRegistry.PIZZA_CRUST.get());
-                output.accept(ItemRegistry.POTATO_FRIES.get());
-                output.accept(ItemRegistry.BAKED_POTATO_FRIES.get());
-                output.accept(ItemRegistry.CHICKEN_NUGGETS.get());
-                output.accept(ItemRegistry.COOKED_CHICKEN_NUGGETS.get());
-                // Drinks
-                output.accept(ItemRegistry.HOT_DARK_COCOA.get());
-                output.accept(ItemRegistry.GOLDEN_APPLE_CIDER.get());
-                output.accept(ItemRegistry.ENCHANTED_GOLDEN_APPLE_CIDER.get());
-                output.accept(ItemRegistry.CHORUS_FRUIT_JUICE.get());
-                output.accept(ItemRegistry.GLISTERING_MELON_JUICE.get());
-                output.accept(ItemRegistry.BERRY_MILK.get());
-                output.accept(ItemRegistry.GLOW_BERRY_MILK.get());
-                // Sweets
-                output.accept(ItemRegistry.CHOCOLATE_CUSTARD.get());
-                output.accept(ItemRegistry.DARK_CHOCOLATE_CUSTARD.get());
-                output.accept(ItemRegistry.CHORUS_FRUIT_CUSTARD.get());
-                output.accept(ItemRegistry.MELON_CUSTARD.get());
-                output.accept(ItemRegistry.GLISTERING_MELON_CUSTARD.get());
-                output.accept(ItemRegistry.SWEET_BERRY_CUSTARD.get());
-                output.accept(ItemRegistry.HONEY_CUSTARD.get());
-                output.accept(ItemRegistry.CHOCOLATE_POPSICLE.get());
-                output.accept(ItemRegistry.DARK_CHOCOLATE_POPSICLE.get());
-                output.accept(ItemRegistry.CHORUS_FRUIT_POPSICLE.get());
-                output.accept(ItemRegistry.GLISTERING_MELON_POPSICLE.get());
-                output.accept(ItemRegistry.SWEET_BERRY_POPSICLE.get());
-                output.accept(ItemRegistry.GLOW_BERRY_POPSICLE.get());
-                output.accept(ItemRegistry.HONEY_POPSICLE.get());
-                output.accept(ItemRegistry.HONEY_GLAZED_CHOCOLATE_POPSICLE.get());
-                output.accept(ItemRegistry.DARK_CHOCOLATE_COOKIE.get());
-                output.accept(ItemRegistry.CHORUS_FRUIT_COOKIE.get());
-                output.accept(ItemRegistry.GLOW_BERRY_COOKIE.get());
-                output.accept(ItemRegistry.GLOW_BERRY_CHEESECAKE.get());
-                output.accept(ItemRegistry.GLOW_BERRY_CHEESECAKE_SLICE.get());
-                output.accept(ItemRegistry.HONEY_PIE.get());
-                output.accept(ItemRegistry.HONEY_PIE_SLICE.get());
-                output.accept(ItemRegistry.HONEY_GLAZED_CHOCOLATE_CHIP_COOKIE.get());
-                output.accept(ItemRegistry.HONEY_GLAZED_CHOCOLATE_PIE.get());
-                output.accept(ItemRegistry.HONEY_GLAZED_CHOCOLATE_PIE_SLICE.get());
-                // Meals
-                output.accept(ItemRegistry.CHICKEN_NOODLE_SOUP.get());
-                output.accept(ItemRegistry.PASTA.get());
-                output.accept(ItemRegistry.GLOW_SQUID_INK_PASTA.get());
-                output.accept(ItemRegistry.SCRAMBLED_EGGS.get());
-                output.accept(ItemRegistry.EGGS_AND_POTATOES.get());
-                output.accept(ItemRegistry.NUGGETS_AND_FRIES.get());
-                output.accept(ItemRegistry.PEPPERONI_PIZZA.get());
-                output.accept(ItemRegistry.PEPPERONI_PIZZA_SLICE.get());
-                output.accept(ItemRegistry.CHEESE_PIZZA.get());
-                output.accept(ItemRegistry.CHEESE_PIZZA_SLICE.get());
+                        // Blocks
+                        entries.add(ItemRegistry.SHREDDED_CHEESE_BAG);
 
-            })
-            .build());
+                        // Tools
+                        entries.add(ItemRegistry.AMETHYST_KNIFE);
+
+                        // Ingredients
+                        entries.add(ItemRegistry.DARK_COCOA_BEANS);
+                        entries.add(ItemRegistry.EGG_YOLK);
+                        entries.add(ItemRegistry.CHEESE_BLOCK);
+                        entries.add(ItemRegistry.SHREDDED_CHEESE);
+                        entries.add(ItemRegistry.PEPPERONIS);
+                        entries.add(ItemRegistry.PIZZA_CRUST);
+                        entries.add(ItemRegistry.POTATO_FRIES);
+                        entries.add(ItemRegistry.BAKED_POTATO_FRIES);
+                        entries.add(ItemRegistry.CHICKEN_NUGGETS);
+                        entries.add(ItemRegistry.COOKED_CHICKEN_NUGGETS);
+
+                        // Drinks
+                        entries.add(ItemRegistry.HOT_DARK_COCOA);
+                        entries.add(ItemRegistry.GOLDEN_APPLE_CIDER);
+                        entries.add(ItemRegistry.ENCHANTED_GOLDEN_APPLE_CIDER);
+                        entries.add(ItemRegistry.CHORUS_FRUIT_JUICE);
+                        entries.add(ItemRegistry.GLISTERING_MELON_JUICE);
+                        entries.add(ItemRegistry.BERRY_MILK);
+                        entries.add(ItemRegistry.GLOW_BERRY_MILK);
+
+                        // Sweets
+                        entries.add(ItemRegistry.CHOCOLATE_CUSTARD);
+                        entries.add(ItemRegistry.DARK_CHOCOLATE_CUSTARD);
+                        entries.add(ItemRegistry.CHORUS_FRUIT_CUSTARD);
+                        entries.add(ItemRegistry.MELON_CUSTARD);
+                        entries.add(ItemRegistry.GLISTERING_MELON_CUSTARD);
+                        entries.add(ItemRegistry.SWEET_BERRY_CUSTARD);
+                        entries.add(ItemRegistry.HONEY_CUSTARD);
+                        entries.add(ItemRegistry.CHOCOLATE_POPSICLE);
+                        entries.add(ItemRegistry.DARK_CHOCOLATE_POPSICLE);
+                        entries.add(ItemRegistry.CHORUS_FRUIT_POPSICLE);
+                        entries.add(ItemRegistry.GLISTERING_MELON_POPSICLE);
+                        entries.add(ItemRegistry.SWEET_BERRY_POPSICLE);
+                        entries.add(ItemRegistry.GLOW_BERRY_POPSICLE);
+                        entries.add(ItemRegistry.HONEY_POPSICLE);
+                        entries.add(ItemRegistry.HONEY_GLAZED_CHOCOLATE_POPSICLE);
+                        entries.add(ItemRegistry.DARK_CHOCOLATE_COOKIE);
+                        entries.add(ItemRegistry.CHORUS_FRUIT_COOKIE);
+                        entries.add(ItemRegistry.GLOW_BERRY_COOKIE);
+                        entries.add(ItemRegistry.GLOW_BERRY_CHEESECAKE);
+                        entries.add(ItemRegistry.GLOW_BERRY_CHEESECAKE_SLICE);
+                        entries.add(ItemRegistry.HONEY_PIE);
+                        entries.add(ItemRegistry.HONEY_PIE_SLICE);
+                        entries.add(ItemRegistry.HONEY_GLAZED_CHOCOLATE_CHIP_COOKIE);
+                        entries.add(ItemRegistry.HONEY_GLAZED_CHOCOLATE_PIE);
+                        entries.add(ItemRegistry.HONEY_GLAZED_CHOCOLATE_PIE_SLICE);
+
+                        // Meals
+                        entries.add(ItemRegistry.CHICKEN_NOODLE_SOUP);
+                        entries.add(ItemRegistry.PASTA);
+                        entries.add(ItemRegistry.GLOW_SQUID_INK_PASTA);
+                        entries.add(ItemRegistry.SCRAMBLED_EGGS);
+                        entries.add(ItemRegistry.EGGS_AND_POTATOES);
+                        entries.add(ItemRegistry.NUGGETS_AND_FRIES);
+                        entries.add(ItemRegistry.PEPPERONI_PIZZA);
+                        entries.add(ItemRegistry.PEPPERONI_PIZZA_SLICE);
+                        entries.add(ItemRegistry.CHEESE_PIZZA);
+                        entries.add(ItemRegistry.CHEESE_PIZZA_SLICE);
+                    })
+                    .build()
+    );
+
+    public static void register() {
+    }
 }

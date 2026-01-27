@@ -1,19 +1,12 @@
 {
   "type": "farmersdelight:cutting",
   "ingredients": [
-    {
-      "item": "minecraft:baked_potato"
-    }
+    { "item": "minecraft:baked_potato" }
   ],
   "result": [
-    {
-      "item": {
-        "count": 2,
-        "item": "arbitrarydelight:baked_potato_fries"
-      }
-    }
+    { "item": "arbitrarydelight:baked_potato_fries", "count": 2 }
   ],
   "tool": {
-    "tag": "c:tools/knife"
+    "tag": "c:tools/knives"
   }
 }

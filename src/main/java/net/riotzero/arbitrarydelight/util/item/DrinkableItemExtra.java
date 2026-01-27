@@ -1,55 +1,58 @@
 package net.riotzero.arbitrarydelight.util.item;
 
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResultHolder;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.ItemUtils;
-import net.minecraft.world.item.UseAnim;
-import net.minecraft.world.level.Level;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.FoodComponent;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemUsage;
+import net.minecraft.util.UseAction;
+import net.minecraft.util.Hand;
+import net.minecraft.util.TypedActionResult;
+import net.minecraft.world.World;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
 
-public class DrinkableItemExtra extends ConsumableItem
-{
-    public DrinkableItemExtra(Properties properties) {
-        super(properties);
+public class DrinkableItemExtra extends ConsumableItem {
+
+    public DrinkableItemExtra(Settings settings) {
+        super(settings);
     }
 
-    public DrinkableItemExtra(Properties properties, boolean hasFoodEffectTooltip) {
-        super(properties, hasFoodEffectTooltip);
+    public DrinkableItemExtra(Settings settings, boolean hasFoodEffectTooltip) {
+        super(settings, hasFoodEffectTooltip);
     }
 
-    public DrinkableItemExtra(Properties properties, boolean hasPotionEffectTooltip, boolean hasCustomTooltip) {
-        super(properties, hasPotionEffectTooltip, hasCustomTooltip);
-    }
-
-    @Override
-    public UseAnim getUseAnimation(ItemStack stack) {
-        return UseAnim.DRINK;
+    public DrinkableItemExtra(Settings settings, boolean hasPotionEffectTooltip, boolean hasCustomTooltip) {
+        super(settings, hasPotionEffectTooltip, hasCustomTooltip);
     }
 
     @Override
-    public int getUseDuration(ItemStack stack) {
+    public UseAction getUseAction(ItemStack stack) {
+        return UseAction.DRINK;
+    }
+
+    @Override
+    public int getMaxUseTime(ItemStack stack) {
         return 32;
     }
 
     @Override
-    public boolean isFoil(ItemStack stack) {
+    public boolean hasGlint(ItemStack stack) {
         return true;
     }
 
     @Override
-    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
-        ItemStack heldStack = player.getItemInHand(hand);
-        if (heldStack.getFoodProperties(player) != null) {
-            if (player.canEat(heldStack.getFoodProperties(player).canAlwaysEat())) {
-                player.startUsingItem(hand);
-                return InteractionResultHolder.consume(heldStack);
-            } else {
-                return InteractionResultHolder.fail(heldStack);
+    public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
+        ItemStack held = user.getStackInHand(hand);
+
+        FoodComponent food = held.getItem().getFoodComponent();
+        if (food != null) {
+            if (user.canConsume(food.isAlwaysEdible())) {
+                user.setCurrentHand(hand);
+                return TypedActionResult.consume(held);
             }
+            return TypedActionResult.fail(held);
         }
-        return ItemUtils.startUsingInstantly(level, player, hand);
+
+        return ItemUsage.consumeHeldItem(world, user, hand);
     }
+
 }

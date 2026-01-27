@@ -1,16 +1,17 @@
 package net.riotzero.arbitrarydelight.registry;
 
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.*;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.item.*;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
+import net.minecraft.util.Identifier;
+import net.minecraft.util.Rarity;
+
 import net.riotzero.arbitrarydelight.ArbitraryDelight;
 import net.riotzero.arbitrarydelight.util.FoodValues.FoodValuesExtra;
-
 import net.riotzero.arbitrarydelight.util.item.*;
+
 import vectorwing.farmersdelight.common.FoodValues;
 import vectorwing.farmersdelight.common.item.*;
 import vectorwing.farmersdelight.common.registry.ModEffects;
@@ -18,197 +19,318 @@ import vectorwing.farmersdelight.common.registry.ModEffects;
 import static vectorwing.farmersdelight.common.registry.ModItems.*;
 
 public class ItemRegistry {
-    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, ArbitraryDelight.MOD_ID);
 
-    public static final RegistryObject<Item> AMETHYST_KNIFE = ITEMS.register("amethyst_knife",
-            () -> new KnifeItem(
-                    MaterialRegistry.AMETHYST,
+    // ---- Registry helper ----
+    private static Item register(String id, Item item) {
+        return Registry.register(Registries.ITEM, new Identifier(ArbitraryDelight.MOD_ID, id), item);
+    }
+
+    public static void register() {
+
+    }
+
+    // ---- Items ----
+
+    public static final Item AMETHYST_KNIFE = register("amethyst_knife",
+            new KnifeItem(
+                    MaterialRegistry.AMETHYST, // you may need to port this to Fabric ToolMaterial if it’s Forge Tier
                     2,
                     -2.0F,
-                    new Item.Properties()
-            ));
+                    basicItem()
+            )
+    );
 
-    public static final RegistryObject<Item> PASTA = ITEMS.register("pasta",
-            () -> new ConsumableItem(bowlFoodItem((new FoodProperties.Builder())
-                    .nutrition(10)
-                    .saturationMod(0.6f)
-                    .effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), FoodValuesExtra.MEDIUM_DURATION, 0), 1.0F)
-                    .build()), true));
-    public static final RegistryObject<Item> SCRAMBLED_EGGS = ITEMS.register("scrambled_eggs",
-            () -> new ConsumableItem(bowlFoodItem((new FoodProperties.Builder())
-                    .nutrition(10)
-                    .saturationMod(0.6f)
-                    .effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), FoodValuesExtra.SHORT_DURATION, 0), 1.0F)
-                    .build()), true));
-    public static final RegistryObject<Item> GLOW_SQUID_INK_PASTA = ITEMS.register("glow_squid_ink_pasta",
-            () -> new ConsumableItem(bowlFoodItem(FoodValuesExtra.GLOW_SQUID_INK_PASTA), true));
-    public static final RegistryObject<Item> EGGS_AND_POTATOES = ITEMS.register("eggs_and_potatoes",
-            () -> new ConsumableItem(bowlFoodItem((new FoodProperties.Builder())
-                    .nutrition(11)
-                    .saturationMod(0.6f)
-                    .effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), FoodValuesExtra.SHORT_DURATION, 0), 1.0F)
-                    .build()), true));
-    public static final RegistryObject<Item> CHICKEN_NOODLE_SOUP = ITEMS.register("chicken_noodle_soup",
-            () -> new ConsumableItem(bowlFoodItem((new FoodProperties.Builder())
-                    .nutrition(16)
-                    .saturationMod(0.9f)
-                    .effect(() -> new MobEffectInstance(ModEffects.COMFORT.get(), FoodValuesExtra.LONG_DURATION, 0), 1.0F)
-                    .build()), true));
-    public static final RegistryObject<Item> POTATO_FRIES = ITEMS.register("potato_fries",
-            () -> new ConsumableItem(foodItem((new FoodProperties.Builder())
-                    .nutrition(1)
-                    .saturationMod(0.3f)
-                    .fast()
-                    .build())));
-    public static final RegistryObject<Item> EGG_YOLK = ITEMS.register("egg_yolk",
-            () -> new ConsumableItem(foodItem((new FoodProperties.Builder())
-                    .nutrition(1)
-                    .saturationMod(0.3f)
-                    .fast()
-                    .build())));
-    public static final RegistryObject<Item> BAKED_POTATO_FRIES = ITEMS.register("baked_potato_fries",
-            () -> new ConsumableItem(foodItem((new FoodProperties.Builder())
-                    .nutrition(3)
-                    .saturationMod(0.2f)
-                    .fast()
-                    .build())));
-    public static final RegistryObject<Item> CHICKEN_NUGGETS = ITEMS.register("chicken_nuggets",
-            () -> new ConsumableItem(foodItem((new FoodProperties.Builder())
-                    .nutrition(1)
-                    .saturationMod(0.3f)
-                    .effect(() -> new MobEffectInstance(MobEffects.HUNGER, 600, 0), 0.3F)
-                    .fast()
-                    .build())));
-    public static final RegistryObject<Item> COOKED_CHICKEN_NUGGETS = ITEMS.register("cooked_chicken_nuggets",
-            () -> new ConsumableItem(foodItem((new FoodProperties.Builder())
-                    .nutrition(2)
-                    .saturationMod(0.6f)
-                    .fast()
-                    .build())));
-    public static final RegistryObject<Item> DARK_COCOA_BEANS = ITEMS.register("dark_cocoa_beans",
-            () -> new Item(basicItem()));
-    public static final RegistryObject<Item> NUGGETS_AND_FRIES = ITEMS.register("nuggets_and_fries",
-            () -> new ConsumableItem(bowlFoodItem((new FoodProperties.Builder())
-                    .nutrition(10)
-                    .saturationMod(0.8f)
-                    .effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT.get(), FoodValuesExtra.MEDIUM_DURATION, 0), 1.0F)
-                    .build()), true));
-    public static final RegistryObject<Item> BERRY_MILK = ITEMS.register("berry_milk",
-            () -> new DrinkableItem(drinkItem()
-                    .food(FoodValuesExtra.BERRY_MILK), true, false));
-    public static final RegistryObject<Item> HOT_DARK_COCOA = ITEMS.register("hot_dark_cocoa",
-            () -> new HotCocoaItem(drinkItem()));
-public static final RegistryObject<Item> GLISTERING_MELON_JUICE = ITEMS.register("glistering_melon_juice",
-            () -> new DrinkableItem(drinkItem()
-                    .food(FoodValuesExtra.GLISTERING_MELON_JUICE), true, false));
-    public static final RegistryObject<Item> SWEET_BERRY_CUSTARD = ITEMS.register("sweet_berry_custard",
-            () -> new ConsumableItem(foodItem(FoodValuesExtra.SWEET_BERRY_CUSTARD)
-                    .craftRemainder(Items.GLASS_BOTTLE)
-                    .stacksTo(16)));
-    public static final RegistryObject<Item> CHOCOLATE_CUSTARD = ITEMS.register("chocolate_custard",
-            () -> new ConsumableItem(foodItem(FoodValuesExtra.SWEET_BERRY_CUSTARD)
-                    .craftRemainder(Items.GLASS_BOTTLE)
-                    .stacksTo(16)));
-    public static final RegistryObject<Item> DARK_CHOCOLATE_CUSTARD = ITEMS.register("dark_chocolate_custard",
-            () -> new ConsumableItem(foodItem(FoodValuesExtra.SWEET_BERRY_CUSTARD)
-                    .craftRemainder(Items.GLASS_BOTTLE)
-                    .stacksTo(16)));
-    public static final RegistryObject<Item> CHORUS_FRUIT_CUSTARD = ITEMS.register("chorus_fruit_custard",
-            () -> new ChorusFruitCustardItem(
-                    new Item.Properties().food(FoodValuesExtra.CHORUS_FRUIT_CUSTARD)
-            ));
-    public static final RegistryObject<Item> CHORUS_FRUIT_COOKIE = ITEMS.register("chorus_fruit_cookie",
-            () -> new ChorusFruitCookieItem(
-                    new Item.Properties().food(FoodValuesExtra.CHORUS_FRUIT_COOKIE)
-            ));
-    public static final RegistryObject<Item> MELON_CUSTARD = ITEMS.register("melon_custard",
-            () -> new ConsumableItem(foodItem(FoodValuesExtra.MELON_CUSTARD)
-                    .craftRemainder(Items.GLASS_BOTTLE)
-                    .stacksTo(16)));
-    public static final RegistryObject<Item> GLISTERING_MELON_CUSTARD = ITEMS.register("glistering_melon_custard",
-            () -> new ConsumableItem(foodItem(FoodValuesExtra.GLISTERING_MELON_CUSTARD)
-                    .craftRemainder(Items.GLASS_BOTTLE)
-                    .stacksTo(16)));
-    public static final RegistryObject<Item> SWEET_BERRY_POPSICLE = ITEMS.register("sweet_berry_popsicle",
-            () -> new PopsicleItem(foodItem(FoodValues.POPSICLE)));
-    public static final RegistryObject<Item> CHOCOLATE_POPSICLE = ITEMS.register("chocolate_popsicle",
-            () -> new PopsicleItem(foodItem(FoodValues.POPSICLE)));
-    public static final RegistryObject<Item> CHORUS_FRUIT_POPSICLE = ITEMS.register("chorus_fruit_popsicle",
-            () -> new ChorusFruitPopsicleItem(
-                    new Item.Properties().food(FoodValuesExtra.CHORUS_FRUIT_POPSICLE)
-            ));
-    public static final RegistryObject<Item> CHORUS_FRUIT_JUICE = ITEMS.register("chorus_fruit_juice",
-            () -> new DrinkableItem(drinkItem()
-                    .food(FoodValuesExtra.CHORUS_FRUIT_JUICE), true, false));
-    public static final RegistryObject<Item> GLISTERING_MELON_POPSICLE = ITEMS.register("glistering_melon_popsicle",
-            () -> new PopsicleItem(foodItem(FoodValuesExtra.GLISTERING_MELON_POPSICLE)));
-    public static final RegistryObject<Item> GLOW_BERRY_MILK = ITEMS.register("glow_berry_milk",
-            () -> new DrinkableItem(drinkItem()
-                    .food(FoodValuesExtra.GLOW_MILK), true, false));
-    public static final RegistryObject<Item> GLOW_BERRY_POPSICLE = ITEMS.register("glow_berry_popsicle",
-            () -> new PopsicleItem(foodItem(FoodValuesExtra.GLOW_POPSICLE)));
-    public static final RegistryObject<Item> GLOW_BERRY_COOKIE = ITEMS.register("glow_berry_cookie",
-            () -> new Item(foodItem(FoodValuesExtra.GLOW_COOKIES)));
+    public static final Item PASTA = register("pasta",
+            new ConsumableItem(bowlFoodItem(new FoodComponent.Builder()
+                    .hunger(10)
+                    .saturationModifier(0.6f)
+                    .statusEffect(
+                            new StatusEffectInstance(
+                                    ModEffects.NOURISHMENT.get(), // if Refabricated exposes it differently, change this line
+                                    FoodValuesExtra.MEDIUM_DURATION,
+                                    0
+                            ),
+                            1.0f
+                    )
+                    .build()), true)
+    );
 
-    public static final RegistryObject<Item> HONEY_GLAZED_CHOCOLATE_CHIP_COOKIE = ITEMS.register(
-            "honey_glazed_chocolate_chip_cookie",
-            () -> new Item(foodItem(FoodValuesExtra.COOKIES)));
-    public static final RegistryObject<Item> DARK_CHOCOLATE_COOKIE = ITEMS.register(
-            "dark_chocolate_cookie",
-            () -> new Item(foodItem(FoodValuesExtra.COOKIES)));
-    public static final RegistryObject<Item> HONEY_GLAZED_CHOCOLATE_POPSICLE = ITEMS.register(
-            "honey_glazed_chocolate_popsicle",
-            () -> new PopsicleItem(foodItem(FoodValues.POPSICLE)));
-    public static final RegistryObject<Item> DARK_CHOCOLATE_POPSICLE = ITEMS.register(
-            "dark_chocolate_popsicle",
-            () -> new PopsicleItem(foodItem(FoodValues.POPSICLE)));
+    public static final Item SCRAMBLED_EGGS = register("scrambled_eggs",
+            new ConsumableItem(bowlFoodItem(new FoodComponent.Builder()
+                    .hunger(10)
+                    .saturationModifier(0.6f)
+                    .statusEffect(
+                            new StatusEffectInstance(
+                                    ModEffects.NOURISHMENT.get(),
+                                    FoodValuesExtra.SHORT_DURATION,
+                                    0
+                            ),
+                            1.0f
+                    )
+                    .build()), true)
+    );
 
-    public static final RegistryObject<Item> HONEY_PIE = ITEMS.register("honey_pie",
-            () -> new BlockItem(BlockRegistry.HONEY_PIE.get(), basicItem()));
-    public static final RegistryObject<Item> HONEY_PIE_SLICE = ITEMS.register("honey_pie_slice",
-            () -> new Item(foodItem(FoodValues.PIE_SLICE)));
+    public static final Item GLOW_SQUID_INK_PASTA = register("glow_squid_ink_pasta",
+            new ConsumableItem(bowlFoodItem(FoodValuesExtra.GLOW_SQUID_INK_PASTA), true)
+    );
 
-    public static final RegistryObject<Item> HONEY_GLAZED_CHOCOLATE_PIE = ITEMS.register("honey_glazed_chocolate_pie",
-            () -> new BlockItem(BlockRegistry.HONEY_GLAZED_CHOCOLATE_PIE.get(), basicItem()));
-    public static final RegistryObject<Item> HONEY_GLAZED_CHOCOLATE_PIE_SLICE = ITEMS.register("honey_glazed_chocolate_pie_slice",
-            () -> new Item(foodItem(FoodValues.PIE_SLICE)));
+    public static final Item EGGS_AND_POTATOES = register("eggs_and_potatoes",
+            new ConsumableItem(bowlFoodItem(new FoodComponent.Builder()
+                    .hunger(11)
+                    .saturationModifier(0.6f)
+                    .statusEffect(
+                            new StatusEffectInstance(
+                                    ModEffects.NOURISHMENT.get(),
+                                    FoodValuesExtra.SHORT_DURATION,
+                                    0
+                            ),
+                            1.0f
+                    )
+                    .build()), true)
+    );
 
-    public static final RegistryObject<Item> HONEY_POPSICLE = ITEMS.register("honey_popsicle",
-            () -> new PopsicleItem(foodItem(FoodValues.POPSICLE)));
-    public static final RegistryObject<Item> HONEY_CUSTARD = ITEMS.register("honey_custard",
-            () -> new ConsumableItem(foodItem(FoodValuesExtra.SWEET_BERRY_CUSTARD)));
+    public static final Item CHICKEN_NOODLE_SOUP = register("chicken_noodle_soup",
+            new ConsumableItem(bowlFoodItem(new FoodComponent.Builder()
+                    .hunger(16)
+                    .saturationModifier(0.9f)
+                    .statusEffect(
+                            new StatusEffectInstance(
+                                    ModEffects.COMFORT.get(),
+                                    FoodValuesExtra.LONG_DURATION,
+                                    0
+                            ),
+                            1.0f
+                    )
+                    .build()), true)
+    );
 
-    public static final RegistryObject<Item> GOLDEN_APPLE_CIDER = ITEMS.register("golden_apple_cider",
-            () -> new DrinkableItem(drinkItem().food(FoodValuesExtra.GOLDEN_APPLE_CIDER).rarity(Rarity.RARE), true,
-                    false));
-    public static final RegistryObject<Item> ENCHANTED_GOLDEN_APPLE_CIDER = ITEMS.register("enchanted_golden_apple_cider",
-            () -> new DrinkableItemExtra(drinkItem().food(FoodValuesExtra.ENCHANTED_GOLDEN_APPLE_CIDER).rarity(Rarity.EPIC),
-                    true,
-                    false));
+    public static final Item POTATO_FRIES = register("potato_fries",
+            new ConsumableItem(foodItem(new FoodComponent.Builder()
+                    .hunger(1)
+                    .saturationModifier(0.3f)
+                    .snack()
+                    .build()))
+    );
 
-    public static final RegistryObject<Item> PEPPERONI_PIZZA = ITEMS.register("pepperoni_pizza",
-            () -> new BlockItem(BlockRegistry.PEPPERONI_PIZZA.get(), basicItem()));
-    public static final RegistryObject<Item> PEPPERONI_PIZZA_SLICE = ITEMS.register("pepperoni_pizza_slice",
-            () -> new Item(foodItem(FoodValues.PIE_SLICE)));
-    public static final RegistryObject<Item> CHEESE_PIZZA = ITEMS.register("cheese_pizza",
-            () -> new BlockItem(BlockRegistry.CHEESE_PIZZA.get(), basicItem()));
-    public static final RegistryObject<Item> CHEESE_PIZZA_SLICE = ITEMS.register("cheese_pizza_slice",
-            () -> new Item(foodItem(FoodValues.PIE_SLICE)));
-    public static final RegistryObject<Item> GLOW_BERRY_CHEESECAKE = ITEMS.register("glow_berry_cheesecake",
-            () -> new BlockItem(BlockRegistry.GLOW_BERRY_CHEESECAKE.get(), basicItem()));
-    public static final RegistryObject<Item> GLOW_BERRY_CHEESECAKE_SLICE = ITEMS.register("glow_berry_cheesecake_slice",
-            () -> new Item(foodItem(FoodValuesExtra.GLOW_PIE_SLICE)));
+    public static final Item EGG_YOLK = register("egg_yolk",
+            new ConsumableItem(foodItem(new FoodComponent.Builder()
+                    .hunger(1)
+                    .saturationModifier(0.3f)
+                    .snack()
+                    .build()))
+    );
 
-    public static final RegistryObject<Item> CHEESE_BLOCK = ITEMS.register("cheese_block",
-            () -> new Item(foodItem(FoodValues.WHEAT_DOUGH)));
-    public static final RegistryObject<Item> PEPPERONIS = ITEMS.register("pepperonis",
-            () -> new Item(foodItem(FoodValues.MINCED_BEEF)));
-    public static final RegistryObject<Item> PIZZA_CRUST = ITEMS.register("pizza_crust",
-            () -> new Item(foodItem(FoodValues.PIE_CRUST)));
-    public static final RegistryObject<Item> SHREDDED_CHEESE = ITEMS.register("shredded_cheese",
-            () -> new Item(foodItem(FoodValues.WHEAT_DOUGH)));
+    public static final Item BAKED_POTATO_FRIES = register("baked_potato_fries",
+            new ConsumableItem(foodItem(new FoodComponent.Builder()
+                    .hunger(3)
+                    .saturationModifier(0.2f)
+                    .snack()
+                    .build()))
+    );
 
-    public static final RegistryObject<Item> SHREDDED_CHEESE_BAG = ITEMS.register("shredded_cheese_bag",
-            () -> new BlockItem(BlockRegistry.SHREDDED_CHEESE_BAG.get(), basicItem()));
+    public static final Item CHICKEN_NUGGETS = register("chicken_nuggets",
+            new ConsumableItem(foodItem(new FoodComponent.Builder()
+                    .hunger(1)
+                    .saturationModifier(0.3f)
+                    .statusEffect(new StatusEffectInstance(StatusEffects.HUNGER, 600, 0), 0.3f)
+                    .snack()
+                    .build()))
+    );
 
+    public static final Item COOKED_CHICKEN_NUGGETS = register("cooked_chicken_nuggets",
+            new ConsumableItem(foodItem(new FoodComponent.Builder()
+                    .hunger(2)
+                    .saturationModifier(0.6f)
+                    .snack()
+                    .build()))
+    );
+
+    public static final Item DARK_COCOA_BEANS = register("dark_cocoa_beans",
+            new Item(basicItem())
+    );
+
+    public static final Item NUGGETS_AND_FRIES = register("nuggets_and_fries",
+            new ConsumableItem(bowlFoodItem(new FoodComponent.Builder()
+                    .hunger(10)
+                    .saturationModifier(0.8f)
+                    .statusEffect(
+                            new StatusEffectInstance(ModEffects.NOURISHMENT.get(), FoodValuesExtra.MEDIUM_DURATION, 0),
+                            1.0f
+                    )
+                    .build()), true)
+    );
+
+    public static final Item BERRY_MILK = register("berry_milk",
+            new DrinkableItem(drinkItem().food(FoodValuesExtra.BERRY_MILK), true, false)
+    );
+
+    public static final Item HOT_DARK_COCOA = register("hot_dark_cocoa",
+            new HotCocoaItem(drinkItem())
+    );
+
+    public static final Item GLISTERING_MELON_JUICE = register("glistering_melon_juice",
+            new DrinkableItem(drinkItem().food(FoodValuesExtra.GLISTERING_MELON_JUICE), true, false)
+    );
+
+    public static final Item SWEET_BERRY_CUSTARD = register("sweet_berry_custard",
+            new ConsumableItem(foodItem(FoodValuesExtra.SWEET_BERRY_CUSTARD)
+                    .recipeRemainder(Items.GLASS_BOTTLE)
+                    .maxCount(16))
+    );
+
+    public static final Item CHOCOLATE_CUSTARD = register("chocolate_custard",
+            new ConsumableItem(foodItem(FoodValuesExtra.SWEET_BERRY_CUSTARD)
+                    .recipeRemainder(Items.GLASS_BOTTLE)
+                    .maxCount(16))
+    );
+
+    public static final Item DARK_CHOCOLATE_CUSTARD = register("dark_chocolate_custard",
+            new ConsumableItem(foodItem(FoodValuesExtra.SWEET_BERRY_CUSTARD)
+                    .recipeRemainder(Items.GLASS_BOTTLE)
+                    .maxCount(16))
+    );
+
+    public static final Item CHORUS_FRUIT_CUSTARD = register("chorus_fruit_custard",
+            new ChorusFruitCustardItem(new Item.Settings().food(FoodValuesExtra.CHORUS_FRUIT_CUSTARD))
+    );
+
+    public static final Item CHORUS_FRUIT_COOKIE = register("chorus_fruit_cookie",
+            new ChorusFruitCookieItem(new Item.Settings().food(FoodValuesExtra.CHORUS_FRUIT_COOKIE))
+    );
+
+    public static final Item MELON_CUSTARD = register("melon_custard",
+            new ConsumableItem(foodItem(FoodValuesExtra.MELON_CUSTARD)
+                    .recipeRemainder(Items.GLASS_BOTTLE)
+                    .maxCount(16))
+    );
+
+    public static final Item GLISTERING_MELON_CUSTARD = register("glistering_melon_custard",
+            new ConsumableItem(foodItem(FoodValuesExtra.GLISTERING_MELON_CUSTARD)
+                    .recipeRemainder(Items.GLASS_BOTTLE)
+                    .maxCount(16))
+    );
+
+    public static final Item SWEET_BERRY_POPSICLE = register("sweet_berry_popsicle",
+            new PopsicleItem(foodItem(FoodValues.POPSICLE))
+    );
+
+    public static final Item CHOCOLATE_POPSICLE = register("chocolate_popsicle",
+            new PopsicleItem(foodItem(FoodValues.POPSICLE))
+    );
+
+    public static final Item CHORUS_FRUIT_POPSICLE = register("chorus_fruit_popsicle",
+            new ChorusFruitPopsicleItem(new Item.Settings().food(FoodValuesExtra.CHORUS_FRUIT_POPSICLE))
+    );
+
+    public static final Item CHORUS_FRUIT_JUICE = register("chorus_fruit_juice",
+            new DrinkableItem(drinkItem().food(FoodValuesExtra.CHORUS_FRUIT_JUICE), true, false)
+    );
+
+    public static final Item GLISTERING_MELON_POPSICLE = register("glistering_melon_popsicle",
+            new PopsicleItem(foodItem(FoodValuesExtra.GLISTERING_MELON_POPSICLE))
+    );
+
+    public static final Item GLOW_BERRY_MILK = register("glow_berry_milk",
+            new DrinkableItem(drinkItem().food(FoodValuesExtra.GLOW_MILK), true, false)
+    );
+
+    public static final Item GLOW_BERRY_POPSICLE = register("glow_berry_popsicle",
+            new PopsicleItem(foodItem(FoodValuesExtra.GLOW_POPSICLE))
+    );
+
+    public static final Item GLOW_BERRY_COOKIE = register("glow_berry_cookie",
+            new Item(foodItem(FoodValuesExtra.GLOW_COOKIES))
+    );
+
+    public static final Item HONEY_GLAZED_CHOCOLATE_CHIP_COOKIE = register("honey_glazed_chocolate_chip_cookie",
+            new Item(foodItem(FoodValuesExtra.COOKIES))
+    );
+
+    public static final Item DARK_CHOCOLATE_COOKIE = register("dark_chocolate_cookie",
+            new Item(foodItem(FoodValuesExtra.COOKIES))
+    );
+
+    public static final Item HONEY_GLAZED_CHOCOLATE_POPSICLE = register("honey_glazed_chocolate_popsicle",
+            new PopsicleItem(foodItem(FoodValues.POPSICLE))
+    );
+
+    public static final Item DARK_CHOCOLATE_POPSICLE = register("dark_chocolate_popsicle",
+            new PopsicleItem(foodItem(FoodValues.POPSICLE))
+    );
+
+    public static final Item HONEY_PIE = register("honey_pie",
+            new BlockItem(BlockRegistry.HONEY_PIE, basicItem())
+    );
+
+    public static final Item HONEY_PIE_SLICE = register("honey_pie_slice",
+            new Item(foodItem(FoodValues.PIE_SLICE))
+    );
+
+    public static final Item HONEY_GLAZED_CHOCOLATE_PIE = register("honey_glazed_chocolate_pie",
+            new BlockItem(BlockRegistry.HONEY_GLAZED_CHOCOLATE_PIE, basicItem())
+    );
+
+    public static final Item HONEY_GLAZED_CHOCOLATE_PIE_SLICE = register("honey_glazed_chocolate_pie_slice",
+            new Item(foodItem(FoodValues.PIE_SLICE))
+    );
+
+    public static final Item HONEY_POPSICLE = register("honey_popsicle",
+            new PopsicleItem(foodItem(FoodValues.POPSICLE))
+    );
+
+    public static final Item HONEY_CUSTARD = register("honey_custard",
+            new ConsumableItem(foodItem(FoodValuesExtra.SWEET_BERRY_CUSTARD))
+    );
+
+    public static final Item GOLDEN_APPLE_CIDER = register("golden_apple_cider",
+            new DrinkableItem(drinkItem().food(FoodValuesExtra.GOLDEN_APPLE_CIDER).rarity(Rarity.RARE), true, false)
+    );
+
+    public static final Item ENCHANTED_GOLDEN_APPLE_CIDER = register("enchanted_golden_apple_cider",
+            new DrinkableItemExtra(drinkItem().food(FoodValuesExtra.ENCHANTED_GOLDEN_APPLE_CIDER).rarity(Rarity.EPIC), true, false)
+    );
+
+    public static final Item PEPPERONI_PIZZA = register("pepperoni_pizza",
+            new BlockItem(BlockRegistry.PEPPERONI_PIZZA, basicItem())
+    );
+
+    public static final Item PEPPERONI_PIZZA_SLICE = register("pepperoni_pizza_slice",
+            new Item(foodItem(FoodValues.PIE_SLICE))
+    );
+
+    public static final Item CHEESE_PIZZA = register("cheese_pizza",
+            new BlockItem(BlockRegistry.CHEESE_PIZZA, basicItem())
+    );
+
+    public static final Item CHEESE_PIZZA_SLICE = register("cheese_pizza_slice",
+            new Item(foodItem(FoodValues.PIE_SLICE))
+    );
+
+    public static final Item GLOW_BERRY_CHEESECAKE = register("glow_berry_cheesecake",
+            new BlockItem(BlockRegistry.GLOW_BERRY_CHEESECAKE, basicItem())
+    );
+
+    public static final Item GLOW_BERRY_CHEESECAKE_SLICE = register("glow_berry_cheesecake_slice",
+            new Item(foodItem(FoodValuesExtra.GLOW_PIE_SLICE))
+    );
+
+    public static final Item CHEESE_BLOCK = register("cheese_block",
+            new Item(foodItem(FoodValues.WHEAT_DOUGH))
+    );
+
+    public static final Item PEPPERONIS = register("pepperonis",
+            new Item(foodItem(FoodValues.MINCED_BEEF))
+    );
+
+    public static final Item PIZZA_CRUST = register("pizza_crust",
+            new Item(foodItem(FoodValues.PIE_CRUST))
+    );
+
+    public static final Item SHREDDED_CHEESE = register("shredded_cheese",
+            new Item(foodItem(FoodValues.WHEAT_DOUGH))
+    );
+
+    public static final Item SHREDDED_CHEESE_BAG = register("shredded_cheese_bag",
+            new BlockItem(BlockRegistry.SHREDDED_CHEESE_BAG, basicItem())
+    );
 }

@@ -1,55 +1,59 @@
 package net.riotzero.arbitrarydelight.util.effect;
 
-import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
-import net.minecraft.util.Mth;
-import net.minecraft.util.RandomSource;
-import net.minecraft.world.effect.MobEffect;
-import net.minecraft.world.effect.MobEffectCategory;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.entity.LivingEntity;
-import net.riotzero.arbitrarydelight.registry.EffectRegistry;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.effect.StatusEffect;
+import net.minecraft.entity.effect.StatusEffectCategory;
+import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
+import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.random.Random;
 
-public class UnstableChorusEffect extends MobEffect {
+public class UnstableChorusEffect extends StatusEffect {
+
     public UnstableChorusEffect() {
-        super(MobEffectCategory.NEUTRAL, 0x9A32CD);
+        super(StatusEffectCategory.NEUTRAL, 0x9A32CD);
     }
 
     @Override
-    public void applyEffectTick(LivingEntity entity, int amplifier) {
-        if (!entity.level().isClientSide && entity instanceof ServerPlayer player) {
-            MobEffectInstance effect = player.getEffect(EffectRegistry.UNSTABLE_CHORUS.get());
-            if (effect != null && effect.getDuration() == 1) {
-                chorusFruitTeleport(player);
-            }
+    public void applyUpdateEffect(LivingEntity entity, int amplifier) {
+        if (!(entity instanceof ServerPlayerEntity player)) return;
+
+        if (player.getStatusEffect(this) != null && player.getStatusEffect(this).getDuration() == 1) {
+            chorusFruitTeleport(player);
         }
     }
 
     @Override
-    public boolean isDurationEffectTick(int duration, int amplifier) {
+    public boolean canApplyUpdateEffect(int duration, int amplifier) {
         return true;
     }
 
-    private void chorusFruitTeleport(ServerPlayer player) {
-        RandomSource random = player.getRandom();
+    private void chorusFruitTeleport(ServerPlayerEntity player) {
+        Random random = player.getRandom();
+
         double startX = player.getX();
         double startY = player.getY();
         double startZ = player.getZ();
 
-        for (int i = 0; i < 16; ++i) {
+        for (int i = 0; i < 16; i++) {
             double targetX = startX + (random.nextDouble() - 0.5D) * 16.0D;
-            double targetY = Mth.clamp(startY + (random.nextInt(16) - 8),
-                    player.level().getMinBuildHeight(),
-                    player.level().getMaxBuildHeight() - 1);
+            double targetY = MathHelper.clamp(
+                    startY + (random.nextInt(16) - 8),
+                    player.getWorld().getBottomY(),
+                    player.getWorld().getTopY() - 1
+            );
             double targetZ = startZ + (random.nextDouble() - 0.5D) * 16.0D;
 
-            if (player.randomTeleport(targetX, targetY, targetZ, true)) {
-                player.level().playSound(null, player.getX(), player.getY(), player.getZ(),
-                        SoundEvents.CHORUS_FRUIT_TELEPORT,
-                        SoundSource.PLAYERS,
+            if (player.teleport(targetX, targetY, targetZ, true)) {
+                player.getWorld().playSound(
+                        null,
+                        player.getX(), player.getY(), player.getZ(),
+                        SoundEvents.ITEM_CHORUS_FRUIT_TELEPORT,
+                        SoundCategory.PLAYERS,
                         1.0F,
-                        player.getRandom().nextFloat() * 0.4F + 0.8F);
+                        random.nextFloat() * 0.4F + 0.8F
+                );
                 break;
             }
         }

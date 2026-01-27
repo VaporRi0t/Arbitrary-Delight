@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "arbitrarydelight",
+  "version": "1.0.0",
+  "name": "Arbitrary Delight",
+  "description": "A Farmer's Delight Add-on that adds Arbitrary Additions :)",
+  "authors": ["Ri0t"],
+  "license": "MIT",
+  "icon": "assets/arbitrarydelight/arbitrarydelight_logo.png",
+  "environment": "*",
+
+  "entrypoints": {
+    "main": ["net.riotzero.arbitrarydelight.ArbitraryDelight"],
+    "fabric-datagen": ["net.riotzero.arbitrarydelight.data.ModDataGenerators"]
+  },
+
+  "depends": {
+    "minecraft": "1.20.1",
+    "java": ">=17",
+    "fabricloader": ">=0.14.0",
+    "farmersdelight": "*"
+  },
+
+  "suggests": {
+    "jei": "*"
+  }
+}

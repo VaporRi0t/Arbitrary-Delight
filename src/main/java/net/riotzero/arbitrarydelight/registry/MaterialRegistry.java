@@ -1,42 +1,41 @@
 package net.riotzero.arbitrarydelight.registry;
 
-import net.minecraft.world.item.Items;
-import net.minecraft.world.item.Tier;
-import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.item.Items;
+import net.minecraft.item.ToolMaterial;
+import net.minecraft.recipe.Ingredient;
 
 public class MaterialRegistry {
 
-    public static final Tier AMETHYST = new Tier() {
+    public static final ToolMaterial AMETHYST = new ToolMaterial() {
         @Override
-        public int getUses() {
+        public int getDurability() {
             return 951;
         }
 
         @Override
-        public float getSpeed() {
+        public float getMiningSpeedMultiplier() {
             return 2.0f;
         }
 
         @Override
-        public float getAttackDamageBonus() {
+        public float getAttackDamage() {
             return 1.2f;
         }
 
         @Override
-        public int getLevel() {
-            // Roughly equivalent to iron-tier mining level. The knife isn't a mining tool,
-            // but Tier requires a level in 1.20.1.
+        public int getMiningLevel() {
+            // roughly iron
             return 2;
         }
 
         @Override
-        public int getEnchantmentValue() {
+        public int getEnchantability() {
             return 12;
         }
 
         @Override
         public Ingredient getRepairIngredient() {
-            return Ingredient.of(Items.AMETHYST_SHARD);
+            return Ingredient.ofItems(Items.AMETHYST_SHARD);
         }
     };
 }

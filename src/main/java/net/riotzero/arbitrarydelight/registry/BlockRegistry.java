@@ -1,37 +1,58 @@
 package net.riotzero.arbitrarydelight.registry;
 
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+import net.minecraft.block.AbstractBlock;
+import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
+import net.minecraft.util.Identifier;
 import net.riotzero.arbitrarydelight.ArbitraryDelight;
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import vectorwing.farmersdelight.common.block.PieBlock;
 
-import java.util.function.ToIntFunction;
-
 public class BlockRegistry {
-    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, ArbitraryDelight.MOD_ID);
 
-    private static ToIntFunction<BlockState> litBlockEmission(int lightValue) {
-        return (state) -> state.getValue(BlockStateProperties.LIT) ? lightValue : 0;
+    private static Identifier id(String path) {
+        return new Identifier(ArbitraryDelight.MOD_ID, path);
     }
 
-    public static final RegistryObject<Block> PEPPERONI_PIZZA = BLOCKS.register("pepperoni_pizza",
-            () -> new PieBlock(BlockBehaviour.Properties.copy(Blocks.CAKE), ItemRegistry.PEPPERONI_PIZZA_SLICE));
-    public static final RegistryObject<Block> CHEESE_PIZZA = BLOCKS.register("cheese_pizza",
-            () -> new PieBlock(BlockBehaviour.Properties.copy(Blocks.CAKE), ItemRegistry.CHEESE_PIZZA_SLICE));
-    public static final RegistryObject<Block> GLOW_BERRY_CHEESECAKE = BLOCKS.register("glow_berry_cheesecake",
-            () -> new PieBlock(BlockBehaviour.Properties.copy(Blocks.CAKE), ItemRegistry.GLOW_BERRY_CHEESECAKE_SLICE));
-    public static final RegistryObject<Block> SHREDDED_CHEESE_BAG = BLOCKS.register("shredded_cheese_bag",
-            () -> new Block(Block.Properties.copy(Blocks.WHITE_WOOL)));
-    public static final RegistryObject<Block> HONEY_PIE = BLOCKS.register("honey_pie",
-            () -> new PieBlock(BlockBehaviour.Properties.copy(Blocks.CAKE), ItemRegistry.HONEY_PIE_SLICE));
-    public static final RegistryObject<Block> HONEY_GLAZED_CHOCOLATE_PIE = BLOCKS.register("honey_glazed_chocolate_pie",
-            () -> new PieBlock(BlockBehaviour.Properties.copy(Blocks.CAKE),
-                    ItemRegistry.HONEY_GLAZED_CHOCOLATE_PIE_SLICE));
+    public static void register() {
+
+    }
+
+    public static final Block PEPPERONI_PIZZA = Registry.register(
+            Registries.BLOCK,
+            id("pepperoni_pizza"),
+            new PieBlock(AbstractBlock.Settings.copy(Blocks.CAKE), () -> ItemRegistry.PEPPERONI_PIZZA_SLICE)
+    );
+
+    public static final Block CHEESE_PIZZA = Registry.register(
+            Registries.BLOCK,
+            id("cheese_pizza"),
+            new PieBlock(AbstractBlock.Settings.copy(Blocks.CAKE), () -> ItemRegistry.CHEESE_PIZZA_SLICE)
+    );
+
+    public static final Block GLOW_BERRY_CHEESECAKE = Registry.register(
+            Registries.BLOCK,
+            id("glow_berry_cheesecake"),
+            new PieBlock(AbstractBlock.Settings.copy(Blocks.CAKE), () -> ItemRegistry.GLOW_BERRY_CHEESECAKE_SLICE)
+    );
+
+    public static final Block HONEY_PIE = Registry.register(
+            Registries.BLOCK,
+            id("honey_pie"),
+            new PieBlock(AbstractBlock.Settings.copy(Blocks.CAKE), () -> ItemRegistry.HONEY_PIE_SLICE)
+    );
+
+    public static final Block HONEY_GLAZED_CHOCOLATE_PIE = Registry.register(
+            Registries.BLOCK,
+            id("honey_glazed_chocolate_pie"),
+            new PieBlock(AbstractBlock.Settings.copy(Blocks.CAKE), () -> ItemRegistry.HONEY_GLAZED_CHOCOLATE_PIE_SLICE)
+    );
+
+    public static final Block SHREDDED_CHEESE_BAG = Registry.register(
+            Registries.BLOCK,
+            id("shredded_cheese_bag"),
+            new Block(AbstractBlock.Settings.copy(Blocks.WHITE_WOOL))
+    );
 
 }
