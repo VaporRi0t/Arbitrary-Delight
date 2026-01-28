@@ -7,13 +7,11 @@
   ],
   "result": [
     {
-      "item": {
-        "count": 2,
-        "item": "arbitrarydelight:potato_fries"
-      }
+      "item": "arbitrarydelight:potato_fries",
+      "count": 2
     }
   ],
   "tool": {
-    "tag": "c:tools/knife"
+    "tag": "c:tools/knives"
   }
 }

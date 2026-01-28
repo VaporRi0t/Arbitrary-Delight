@@ -7,13 +7,11 @@
   ],
   "result": [
     {
-      "item": {
-        "count": 4,
-        "item": "arbitrarydelight:honey_pie_slice"
-      }
+      "item": "arbitrarydelight:honey_pie_slice",
+      "count": 4
     }
   ],
   "tool": {
-    "tag": "c:tools/knife"
+    "tag": "c:tools/knives"
   }
 }
