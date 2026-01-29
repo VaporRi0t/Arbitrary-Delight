@@ -1,0 +1,24 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 600,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "arbitrarydelight:pizza_crust"
+    },
+    {
+      "item": "farmersdelight:tomato_sauce"
+    },
+    {
+      "item": "arbitrarydelight:shredded_cheese"
+    },
+    {
+      "item": "farmersdelight:cabbage"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "count": 1,
+    "id": "arbitrarydelight:veggie_pizza"
+  }
+}

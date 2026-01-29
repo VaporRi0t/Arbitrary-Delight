@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "ad_supreme_pizza",
+  "key": {
+    "#": {
+      "item": "arbitrarydelight:supreme_pizza_slice"
+    }
+  },
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "result": {
+    "count": 1,
+    "id": "arbitrarydelight:supreme_pizza"
+  }
+}
