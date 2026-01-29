@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "ad_veggie_pizza",
+  "key": {
+    "#": {
+      "item": "arbitrarydelight:veggie_pizza_slice"
+    }
+  },
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "result": {
+    "count": 1,
+    "item": "arbitrarydelight:veggie_pizza"
+  }
+}

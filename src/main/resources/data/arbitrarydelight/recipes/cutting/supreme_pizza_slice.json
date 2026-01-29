@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "arbitrarydelight:supreme_pizza"
+    }
+  ],
+  "result": [
+    {
+      "item": "arbitrarydelight:supreme_pizza_slice",
+      "count": 4
+    }
+  ],
+  "tool": {
+    "tag": "c:tools/knives"
+  }
+}

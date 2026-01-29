@@ -31,6 +31,18 @@ public class BlockRegistry {
             new PieBlock(AbstractBlock.Settings.copy(Blocks.CAKE), () -> ItemRegistry.CHEESE_PIZZA_SLICE)
     );
 
+    public static final Block VEGGIE_PIZZA = Registry.register(
+            Registries.BLOCK,
+            id("veggie_pizza"),
+            new PieBlock(AbstractBlock.Settings.copy(Blocks.CAKE), () -> ItemRegistry.VEGGIE_PIZZA_SLICE)
+    );
+
+    public static final Block SUPREME_PIZZA = Registry.register(
+            Registries.BLOCK,
+            id("supreme_pizza"),
+            new PieBlock(AbstractBlock.Settings.copy(Blocks.CAKE), () -> ItemRegistry.SUPREME_PIZZA_SLICE)
+    );
+
     public static final Block GLOW_BERRY_CHEESECAKE = Registry.register(
             Registries.BLOCK,
             id("glow_berry_cheesecake"),

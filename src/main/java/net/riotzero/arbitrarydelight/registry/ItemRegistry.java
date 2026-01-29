@@ -306,6 +306,22 @@ public class ItemRegistry {
             new Item(foodItem(FoodValues.PIE_SLICE))
     );
 
+    public static final Item VEGGIE_PIZZA = register("veggie_pizza",
+            new BlockItem(BlockRegistry.VEGGIE_PIZZA, basicItem())
+    );
+
+    public static final Item VEGGIE_PIZZA_SLICE = register("veggie_pizza_slice",
+            new Item(foodItem(FoodValues.PIE_SLICE))
+    );
+
+    public static final Item SUPREME_PIZZA = register("supreme_pizza",
+            new BlockItem(BlockRegistry.SUPREME_PIZZA, basicItem())
+    );
+
+    public static final Item SUPREME_PIZZA_SLICE = register("supreme_pizza_slice",
+            new Item(foodItem(FoodValues.PIE_SLICE))
+    );
+
     public static final Item GLOW_BERRY_CHEESECAKE = register("glow_berry_cheesecake",
             new BlockItem(BlockRegistry.GLOW_BERRY_CHEESECAKE, basicItem())
     );
