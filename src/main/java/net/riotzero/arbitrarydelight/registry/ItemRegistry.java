@@ -194,6 +194,14 @@ public static final RegistryObject<Item> GLISTERING_MELON_JUICE = ITEMS.register
             () -> new BlockItem(BlockRegistry.CHEESE_PIZZA.get(), basicItem()));
     public static final RegistryObject<Item> CHEESE_PIZZA_SLICE = ITEMS.register("cheese_pizza_slice",
             () -> new Item(foodItem(FoodValues.PIE_SLICE)));
+    public static final RegistryObject<Item> VEGGIE_PIZZA = ITEMS.register("veggie_pizza",
+            () -> new BlockItem(BlockRegistry.VEGGIE_PIZZA.get(), basicItem()));
+    public static final RegistryObject<Item> VEGGIE_PIZZA_SLICE = ITEMS.register("veggie_pizza_slice",
+            () -> new Item(foodItem(FoodValues.PIE_SLICE)));
+    public static final RegistryObject<Item> SUPREME_PIZZA = ITEMS.register("supreme_pizza",
+            () -> new BlockItem(BlockRegistry.SUPREME_PIZZA.get(), basicItem()));
+    public static final RegistryObject<Item> SUPREME_PIZZA_SLICE = ITEMS.register("supreme_pizza_slice",
+            () -> new Item(foodItem(FoodValues.PIE_SLICE)));
     public static final RegistryObject<Item> GLOW_BERRY_CHEESECAKE = ITEMS.register("glow_berry_cheesecake",
             () -> new BlockItem(BlockRegistry.GLOW_BERRY_CHEESECAKE.get(), basicItem()));
     public static final RegistryObject<Item> GLOW_BERRY_CHEESECAKE_SLICE = ITEMS.register("glow_berry_cheesecake_slice",

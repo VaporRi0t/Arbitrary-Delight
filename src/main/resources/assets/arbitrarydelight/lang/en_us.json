@@ -17,6 +17,8 @@
   "item.arbitrarydelight.pepperoni_pizza_slice": "Slice of Pepperoni Pizza",
   "item.arbitrarydelight.cheese_pizza": "Cheese Pizza",
   "item.arbitrarydelight.cheese_pizza_slice": "Slice of Cheese Pizza",
+  "item.arbitrarydelight.veggie_pizza_slice": "Slice of Veggie Pizza",
+  "item.arbitrarydelight.supreme_pizza_slice": "Slice of Supreme Pizza",
   "item.arbitrarydelight.glow_berry_cheesecake_slice": "Slice of Glow Berry Cheesecake",
   "item.arbitrarydelight.cheese_block": "Cheese Block",
   "item.arbitrarydelight.pepperonis": "Pepperonis",
@@ -52,6 +54,8 @@
 
   "block.arbitrarydelight.pepperoni_pizza": "Pepperoni Pizza",
   "block.arbitrarydelight.cheese_pizza": "Cheese Pizza",
+  "block.arbitrarydelight.veggie_pizza": "Veggie Pizza",
+  "block.arbitrarydelight.supreme_pizza": "Supreme Pizza",
   "block.arbitrarydelight.glow_berry_cheesecake": "Glow Berry Cheesecake",
   "block.arbitrarydelight.honey_pie": "Honey Pie",
   "block.arbitrarydelight.honey_glazed_chocolate_pie": "Honey Glazed Chocolate Pie",

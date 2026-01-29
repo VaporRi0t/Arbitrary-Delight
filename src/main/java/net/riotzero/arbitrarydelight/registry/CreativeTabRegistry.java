@@ -75,6 +75,10 @@ public class CreativeTabRegistry {
                 output.accept(ItemRegistry.PEPPERONI_PIZZA_SLICE.get());
                 output.accept(ItemRegistry.CHEESE_PIZZA.get());
                 output.accept(ItemRegistry.CHEESE_PIZZA_SLICE.get());
+                output.accept(ItemRegistry.VEGGIE_PIZZA.get());
+                output.accept(ItemRegistry.VEGGIE_PIZZA_SLICE.get());
+                output.accept(ItemRegistry.SUPREME_PIZZA.get());
+                output.accept(ItemRegistry.SUPREME_PIZZA_SLICE.get());
 
             })
             .build());
