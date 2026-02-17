@@ -7,19 +7,15 @@
   "authors": [
     "Ri0t"
   ],
-  "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
-  },
-  "license": "CC0-1.0",
-  "icon": "assets/arbitrarydelight/arbitrarydelight_logo_special_square.png",
+  "license": "MIT",
+  "icon": "icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.riotzero.arbitrarydelight.fabric.ExampleModFabric"
+      "net.riotzero.arbitrarydelight.fabric.ArbitraryDelightFabric"
     ],
     "client": [
-      "net.riotzero.arbitrarydelight.fabric.client.ExampleModFabricClient"
+      "net.riotzero.arbitrarydelight.fabric.client.ArbitraryDelightFabricClient"
     ]
   },
   "mixins": [

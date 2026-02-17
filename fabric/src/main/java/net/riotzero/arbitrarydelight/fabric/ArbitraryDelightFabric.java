@@ -4,7 +4,7 @@ import net.fabricmc.api.ModInitializer;
 
 import net.riotzero.arbitrarydelight.ArbitraryDelight;
 
-public final class ExampleModFabric implements ModInitializer {
+public final class ArbitraryDelightFabric implements ModInitializer {
     @Override
     public void onInitialize() {
         // This code runs as soon as Minecraft is in a mod-load-ready state.

@@ -1,7 +1,7 @@
 modLoader = "javafml"
 loaderVersion = "[4,)"
 #issueTrackerURL = ""
-license = "Insert License Here"
+license = "MIT"
 
 [[mods]]
 modId = "arbitrarydelight"
@@ -11,7 +11,7 @@ authors = "Ri0t"
 description = '''
 A Farmer's Delight Add-on that adds Arbitrary Additions :)
 '''
-#logoFile="assets/arbitrarydelight/arbitrarydelight_logo.png"
+logoFile="arbitrarydelight_logo.png"
 
 [[dependencies.arbitrarydelight]]
 modId = "neoforge"
