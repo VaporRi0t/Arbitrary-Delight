@@ -2,12 +2,12 @@ package net.riotzero.arbitrarydelight.neoforge;
 
 import net.neoforged.fml.common.Mod;
 
-import net.riotzero.arbitrarydelight.ExampleMod;
+import net.riotzero.arbitrarydelight.ArbitraryDelight;
 
-@Mod(ExampleMod.MOD_ID)
+@Mod(ArbitraryDelight.MOD_ID)
 public final class ExampleModNeoForge {
     public ExampleModNeoForge() {
         // Run our common setup.
-        ExampleMod.init();
+        ArbitraryDelight.init();
     }
 }

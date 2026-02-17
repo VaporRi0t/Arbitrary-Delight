@@ -2,7 +2,7 @@ package net.riotzero.arbitrarydelight.fabric;
 
 import net.fabricmc.api.ModInitializer;
 
-import net.riotzero.arbitrarydelight.ExampleMod;
+import net.riotzero.arbitrarydelight.ArbitraryDelight;
 
 public final class ExampleModFabric implements ModInitializer {
     @Override
@@ -12,6 +12,6 @@ public final class ExampleModFabric implements ModInitializer {
         // Proceed with mild caution.
 
         // Run our common setup.
-        ExampleMod.init();
+        ArbitraryDelight.init();
     }
 }

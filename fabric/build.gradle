@@ -7,6 +7,17 @@ architectury {
     fabric()
 }
 
+loom {
+    runs {
+        client {
+            property("farmersdelight.fdrf.recipe_book_types", "false")
+        }
+        server {
+            property("farmersdelight.fdrf.recipe_book_types", "false")
+        }
+    }
+}
+
 configurations {
     common {
         canBeResolved = true
@@ -24,14 +35,26 @@ configurations {
     }
 }
 
+repositories {
+    maven { url = "https://maven.architectury.dev" }
+    maven { url = "https://maven.minecraftforge.net" }
+
+    maven {
+        url "https://cursemaven.com"
+        content {
+            includeGroup "curse.maven"
+        }
+    }
+}
+
 dependencies {
     modImplementation "net.fabricmc:fabric-loader:$rootProject.fabric_loader_version"
-
-    // Fabric API. This is technically optional, but you probably want it anyway.
+    modImplementation "curse.maven:farmers-delight-refabricated-993166:6515430"
     modImplementation "net.fabricmc.fabric-api:fabric-api:$rootProject.fabric_api_version"
-
-    // Architectury API. This is optional, and you can comment it out if you don't need it.
     modImplementation "dev.architectury:architectury-fabric:$rootProject.architectury_api_version"
+
+    modCompileOnly "mezz.jei:jei-${minecraft_version}-fabric-api:${jei_version}"
+    modLocalRuntime "mezz.jei:jei-${minecraft_version}-fabric:${jei_version}"
 
     common(project(path: ':common', configuration: 'namedElements')) { transitive = false }
     shadowBundle project(path: ':common', configuration: 'transformProductionFabric')
