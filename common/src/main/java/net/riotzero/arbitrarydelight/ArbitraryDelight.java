@@ -9,9 +9,9 @@ public class ArbitraryDelight {
     public static final Logger LOGGER = LogUtils.getLogger();
 
     public static void init() {
-        BlockRegistry.init();
-        ItemRegistry.init();
-        CreativeTabRegistry.init();
         EffectRegistry.init();
+        ItemRegistry.init();
+        BlockRegistry.init();
+        CreativeTabRegistry.init();
     }
 }

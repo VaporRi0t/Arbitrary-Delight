@@ -2,10 +2,19 @@ architectury {
     common rootProject.enabled_platforms.split(',')
 }
 
-dependencies {
-    modCompileOnly "mezz.jei:jei-${minecraft_version}-common-api:${jei_version}"
+repositories {
+    maven { url "https://maven.architectury.dev" }
+    maven { url "https://maven.modrinth.com" }
+}
 
+dependencies {
+    // We depend on Fabric Loader here to use the Fabric @Environment annotations,
+    // which get remapped to the correct annotations on each platform.
+    // Do NOT use other classes from Fabric Loader.
     modImplementation "net.fabricmc:fabric-loader:$rootProject.fabric_loader_version"
+
+    // Architectury API. This is optional, and you can comment it out if you don't need it.
     modImplementation "dev.architectury:architectury:$rootProject.architectury_api_version"
-    modImplementation "curse.maven:farmers-delight-398521:7596366"
+
+    modImplementation "curse.maven:farmers-delight-398521:6917255"
 }

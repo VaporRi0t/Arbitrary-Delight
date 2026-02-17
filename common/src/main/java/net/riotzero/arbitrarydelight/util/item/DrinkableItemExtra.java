@@ -1,9 +1,7 @@
 package net.riotzero.arbitrarydelight.util.item;
 
-import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.ItemStack;
@@ -12,8 +10,8 @@ import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
 
-public class DrinkableItemExtra extends ConsumableItem
-{
+public class DrinkableItemExtra extends ConsumableItem {
+
     public DrinkableItemExtra(Properties properties) {
         super(properties);
     }
@@ -32,7 +30,7 @@ public class DrinkableItemExtra extends ConsumableItem
     }
 
     @Override
-    public int getUseDuration(ItemStack stack, LivingEntity entity) {
+    public int getUseDuration(ItemStack stack) { // Note: 1.20.1 doesn't usually take LivingEntity here
         return 32;
     }
 
@@ -45,7 +43,8 @@ public class DrinkableItemExtra extends ConsumableItem
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
         ItemStack heldStack = player.getItemInHand(hand);
 
-        FoodProperties food = heldStack.get(DataComponents.FOOD);
+        // 1.20.1 Way: Get food properties from the Item directly
+        FoodProperties food = heldStack.getItem().getFoodProperties();
 
         if (food != null) {
             if (player.canEat(food.canAlwaysEat())) {

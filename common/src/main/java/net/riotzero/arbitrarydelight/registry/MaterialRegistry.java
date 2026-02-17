@@ -1,16 +1,12 @@
 package net.riotzero.arbitrarydelight.registry;
 
-import net.minecraft.tags.BlockTags;
-import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.level.block.Block;
 
 public class MaterialRegistry {
 
-    public static final Tier AMETHYST = new Tier()
-    {
+    public static final Tier AMETHYST = new Tier() {
         @Override
         public int getUses() {
             return 951;
@@ -27,8 +23,8 @@ public class MaterialRegistry {
         }
 
         @Override
-        public TagKey<Block> getIncorrectBlocksForDrops() {
-            return BlockTags.INCORRECT_FOR_IRON_TOOL;
+        public int getLevel() {
+            return 2;
         }
 
         @Override

@@ -9,11 +9,9 @@ import net.minecraft.world.item.ItemStack;
 import net.riotzero.arbitrarydelight.ArbitraryDelight;
 
 public class CreativeTabRegistry {
-    // Use Architectury's DeferredRegister
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
             DeferredRegister.create(ArbitraryDelight.MOD_ID, Registries.CREATIVE_MODE_TAB);
 
-    // Use RegistrySupplier instead of DeferredHolder
     public static final RegistrySupplier<CreativeModeTab> ARBITRARYDELIGHT_TAB = CREATIVE_MODE_TABS.register("arbitrarydelight_tab",
             () -> CreativeModeTab.builder(CreativeModeTab.Row.TOP, 0)
                     .title(Component.translatable("itemGroup.arbitrarydelight"))
