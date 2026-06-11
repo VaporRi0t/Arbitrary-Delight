@@ -16,6 +16,7 @@ public class CreativeTabRegistry {
             .displayItems((parameters, output) -> {
 
                 // Blocks
+                output.accept(ItemRegistry.BRICK_COUNTER.get());
                 output.accept(ItemRegistry.SHREDDED_CHEESE_BAG.get());
                 // Tools
                 output.accept(ItemRegistry.AMETHYST_KNIFE.get());
@@ -38,6 +39,7 @@ public class CreativeTabRegistry {
                 output.accept(ItemRegistry.GLISTERING_MELON_JUICE.get());
                 output.accept(ItemRegistry.BERRY_MILK.get());
                 output.accept(ItemRegistry.GLOW_BERRY_MILK.get());
+                output.accept(ItemRegistry.CHERRY_BLOSSOM_TEA.get());
                 // Sweets
                 output.accept(ItemRegistry.CHOCOLATE_CUSTARD.get());
                 output.accept(ItemRegistry.DARK_CHOCOLATE_CUSTARD.get());

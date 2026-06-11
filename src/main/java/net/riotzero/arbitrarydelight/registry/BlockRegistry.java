@@ -37,5 +37,7 @@ public class BlockRegistry {
     public static final RegistryObject<Block> HONEY_GLAZED_CHOCOLATE_PIE = BLOCKS.register("honey_glazed_chocolate_pie",
             () -> new PieBlock(BlockBehaviour.Properties.copy(Blocks.CAKE),
                     ItemRegistry.HONEY_GLAZED_CHOCOLATE_PIE_SLICE));
+    public static final RegistryObject<Block> BRICK_COUNTER = BLOCKS.register("brick_counter",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.BRICKS).requiresCorrectToolForDrops()));
 
 }

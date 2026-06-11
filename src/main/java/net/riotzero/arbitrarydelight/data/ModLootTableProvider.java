@@ -8,7 +8,6 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.riotzero.arbitrarydelight.registry.BlockRegistry;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 
@@ -29,11 +28,15 @@ public class ModLootTableProvider extends LootTableProvider {
         @Override
         protected void generate() {
             dropSelf(BlockRegistry.SHREDDED_CHEESE_BAG.get());
+            dropSelf(BlockRegistry.BRICK_COUNTER.get());
         }
 
         @Override
         protected Iterable<Block> getKnownBlocks() {
-            return Collections.singletonList(BlockRegistry.SHREDDED_CHEESE_BAG.get());
+            return List.of(
+                    BlockRegistry.SHREDDED_CHEESE_BAG.get(),
+                    BlockRegistry.BRICK_COUNTER.get()
+            );
         }
     }
 }

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "minecraft:bricks"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "pattern": [
+    "II",
+    "##",
+    "##"
+  ],
+  "result": {
+    "count": 1,
+    "item": "arbitrarydelight:brick_counter"
+  }
+}

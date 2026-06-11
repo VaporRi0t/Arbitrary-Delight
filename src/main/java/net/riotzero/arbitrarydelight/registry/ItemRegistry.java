@@ -96,6 +96,9 @@ public class ItemRegistry {
     public static final RegistryObject<Item> BERRY_MILK = ITEMS.register("berry_milk",
             () -> new DrinkableItem(drinkItem()
                     .food(FoodValuesExtra.BERRY_MILK), true, false));
+    public static final RegistryObject<Item> CHERRY_BLOSSOM_TEA = ITEMS.register("cherry_blossom_tea",
+            () -> new DrinkableItem(drinkItem()
+                    .food(FoodValuesExtra.CHERRY_BLOSSOM_TEA), true, false));
     public static final RegistryObject<Item> HOT_DARK_COCOA = ITEMS.register("hot_dark_cocoa",
             () -> new HotCocoaItem(drinkItem()));
 public static final RegistryObject<Item> GLISTERING_MELON_JUICE = ITEMS.register("glistering_melon_juice",
@@ -218,5 +221,7 @@ public static final RegistryObject<Item> GLISTERING_MELON_JUICE = ITEMS.register
 
     public static final RegistryObject<Item> SHREDDED_CHEESE_BAG = ITEMS.register("shredded_cheese_bag",
             () -> new BlockItem(BlockRegistry.SHREDDED_CHEESE_BAG.get(), basicItem()));
+    public static final RegistryObject<Item> BRICK_COUNTER = ITEMS.register("brick_counter",
+            () -> new BlockItem(BlockRegistry.BRICK_COUNTER.get(), basicItem()));
 
 }
