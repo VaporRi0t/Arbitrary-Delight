@@ -16,6 +16,7 @@ public class CreativeTabRegistry {
             .displayItems((parameters, output) -> {
 
                 // Blocks
+                output.accept(ItemRegistry.BRICK_COUNTER.get());
                 output.accept(ItemRegistry.SHREDDED_CHEESE_BAG.get());
                 // Tools
                 output.accept(ItemRegistry.AMETHYST_KNIFE.get());

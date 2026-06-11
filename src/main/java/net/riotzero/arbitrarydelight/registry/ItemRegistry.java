@@ -224,5 +224,7 @@ public class ItemRegistry {
 
     public static final DeferredItem<Item> SHREDDED_CHEESE_BAG = ITEMS.register("shredded_cheese_bag",
             () -> new BlockItem(BlockRegistry.SHREDDED_CHEESE_BAG.get(), basicItem()));
+    public static final DeferredItem<Item> BRICK_COUNTER = ITEMS.register("brick_counter",
+            () -> new BlockItem(BlockRegistry.BRICK_COUNTER.get(), basicItem()));
 
 }
