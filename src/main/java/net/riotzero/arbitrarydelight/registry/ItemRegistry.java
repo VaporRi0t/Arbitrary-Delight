@@ -164,6 +164,10 @@ public class ItemRegistry {
             new DrinkableItem(drinkItem().food(FoodValuesExtra.BERRY_MILK), true, false)
     );
 
+    public static final Item CHERRY_BLOSSOM_TEA = register("cherry_blossom_tea",
+            new DrinkableItem(drinkItem().food(FoodValuesExtra.CHERRY_BLOSSOM_TEA), true, false)
+    );
+
     public static final Item HOT_DARK_COCOA = register("hot_dark_cocoa",
             new HotCocoaItem(drinkItem())
     );

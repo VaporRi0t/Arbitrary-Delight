@@ -47,6 +47,12 @@ public class FoodValuesExtra {
                     .statusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 1200, 0), 1.0F)
                     .build();
 
+    public static final FoodComponent CHERRY_BLOSSOM_TEA =
+            new FoodComponent.Builder()
+                    .alwaysEdible()
+                    .statusEffect(new StatusEffectInstance(StatusEffects.HASTE, 1200, 0), 1.0F)
+                    .build();
+
     public static final FoodComponent GLISTERING_MELON_JUICE =
             new FoodComponent.Builder()
                     .alwaysEdible()

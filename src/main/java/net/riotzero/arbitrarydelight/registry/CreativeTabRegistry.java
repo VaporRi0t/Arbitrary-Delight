@@ -45,6 +45,7 @@ public class CreativeTabRegistry {
                         entries.add(ItemRegistry.GLISTERING_MELON_JUICE);
                         entries.add(ItemRegistry.BERRY_MILK);
                         entries.add(ItemRegistry.GLOW_BERRY_MILK);
+                        entries.add(ItemRegistry.CHERRY_BLOSSOM_TEA);
 
                         // Sweets
                         entries.add(ItemRegistry.CHOCOLATE_CUSTARD);
