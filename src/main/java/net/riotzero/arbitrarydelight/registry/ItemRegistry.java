@@ -96,12 +96,15 @@ public class ItemRegistry {
                     .saturationModifier(0.8f)
                     .effect(() -> new MobEffectInstance(ModEffects.NOURISHMENT, FoodValuesExtra.MEDIUM_DURATION, 0), 1.0F)
                     .build()), true));
+    public static   final DeferredItem<Item> CHERRY_BLOSSOM_TEA   = ITEMS.register("cherry_blossom_tea",
+            () -> new DrinkableItem(drinkItem()
+                    .food(FoodValuesExtra.CHERRY_BLOSSOM_TEA), true, false));
     public static final DeferredItem<Item> BERRY_MILK = ITEMS.register("berry_milk",
             () -> new DrinkableItem(drinkItem()
                     .food(FoodValuesExtra.BERRY_MILK), true, false));
     public static final DeferredItem<Item> HOT_DARK_COCOA = ITEMS.register("hot_dark_cocoa",
             () -> new HotCocoaItem(drinkItem()));
-public static final DeferredItem<Item> GLISTERING_MELON_JUICE = ITEMS.register("glistering_melon_juice",
+    public static final DeferredItem<Item> GLISTERING_MELON_JUICE = ITEMS.register("glistering_melon_juice",
             () -> new DrinkableItem(drinkItem()
                     .food(FoodValuesExtra.GLISTERING_MELON_JUICE), true, false));
     public static final DeferredItem<Item> SWEET_BERRY_CUSTARD = ITEMS.register("sweet_berry_custard",

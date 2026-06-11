@@ -38,6 +38,7 @@ public class CreativeTabRegistry {
                 output.accept(ItemRegistry.GLISTERING_MELON_JUICE.get());
                 output.accept(ItemRegistry.BERRY_MILK.get());
                 output.accept(ItemRegistry.GLOW_BERRY_MILK.get());
+                output.accept(ItemRegistry.CHERRY_BLOSSOM_TEA);
                 // Sweets
                 output.accept(ItemRegistry.CHOCOLATE_CUSTARD.get());
                 output.accept(ItemRegistry.DARK_CHOCOLATE_CUSTARD.get());

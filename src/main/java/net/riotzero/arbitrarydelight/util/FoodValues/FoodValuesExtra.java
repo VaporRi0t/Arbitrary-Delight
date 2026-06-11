@@ -24,6 +24,7 @@ public class FoodValuesExtra {
     public static final FoodProperties MELON_CUSTARD =
             (new FoodProperties.Builder()).nutrition(7).saturationModifier(0.6F).alwaysEdible().build();
     public static final FoodProperties BERRY_MILK = (new FoodProperties.Builder()).alwaysEdible().effect(() -> new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1200, 0), 1.0F).build();
+    public static final FoodProperties CHERRY_BLOSSOM_TEA = (new FoodProperties.Builder()).alwaysEdible().effect(() -> new MobEffectInstance(MobEffects.DIG_SPEED, 1200, 0), 1.0F).build();
     public static final FoodProperties GLISTERING_MELON_JUICE = (new FoodProperties.Builder()).alwaysEdible().effect(() -> new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 1200, 0), 1.0F).build();
     public static final Map<Item, FoodProperties> VANILLA_SOUP_EFFECTS;
     public static final FoodProperties RABBIT_STEW_BUFF;
