@@ -67,4 +67,10 @@ public class BlockRegistry {
             new Block(AbstractBlock.Settings.copy(Blocks.WHITE_WOOL))
     );
 
+    public static final Block BRICK_COUNTER = Registry.register(
+            Registries.BLOCK,
+            id("brick_counter"),
+            new Block(AbstractBlock.Settings.copy(Blocks.BRICKS).requiresTool())
+    );
+
 }

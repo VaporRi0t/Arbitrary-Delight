@@ -20,6 +20,7 @@ public class CreativeTabRegistry {
                     .entries((context, entries) -> {
 
                         // Blocks
+                        entries.add(ItemRegistry.BRICK_COUNTER);
                         entries.add(ItemRegistry.SHREDDED_CHEESE_BAG);
 
                         // Tools

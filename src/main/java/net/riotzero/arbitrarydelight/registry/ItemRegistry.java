@@ -353,4 +353,7 @@ public class ItemRegistry {
     public static final Item SHREDDED_CHEESE_BAG = register("shredded_cheese_bag",
             new BlockItem(BlockRegistry.SHREDDED_CHEESE_BAG, basicItem())
     );
+    public static final Item BRICK_COUNTER = register("brick_counter",
+            new BlockItem(BlockRegistry.BRICK_COUNTER, basicItem())
+    );
 }

@@ -13,5 +13,6 @@ public final class ModLootTableProvider extends FabricBlockLootTableProvider {
     @Override
     public void generate() {
         addDrop(BlockRegistry.SHREDDED_CHEESE_BAG);
+        addDrop(BlockRegistry.BRICK_COUNTER);
     }
 }
