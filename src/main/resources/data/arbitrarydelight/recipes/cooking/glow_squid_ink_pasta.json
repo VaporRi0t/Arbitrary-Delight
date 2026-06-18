@@ -4,7 +4,7 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "tag": "c:foods/safe_raw_fish"
+      "tag": "forge:raw_fishes"
     },
     {
       "item": "farmersdelight:raw_pasta"
@@ -19,6 +19,6 @@
   "recipe_book_tab": "meals",
   "result": {
     "count": 1,
-    "item": "arbitrarydelight:glow_squitem_ink_pasta"
+    "item": "arbitrarydelight:glow_squid_ink_pasta"
   }
 }
